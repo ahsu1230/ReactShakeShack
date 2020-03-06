@@ -17,7 +17,9 @@ In this exercise, you will learn the following concepts:
  - Creating lists (`<ul>` & `<li>`)
  - React `props`
  - Callback functions
+ - Inserting images
  - Asynchronous function calls
+ - Cookies & LocalStorage
 
 ## Getting Started
 Traverse to the root directory (same directory as `index.html`).
@@ -27,6 +29,13 @@ npm install
 If there are no errors, you should see a 'Built in: xx ms.'
 You should see a `Server running at http://localhost:1234`
 So in a browser (like Chrome), go to http://localhost:1234.
+
+In your index.html, look for the following line:
+```
+<script src="./<THIS>/main.js"></script>
+```
+Make sure `<THIS>` is `components_starter`.
+If you would like to see what the final app should look like, replace `<THIS>` with `components_answer`.
 
 ### HTML & CSS Basics
  - What is a DOM?
@@ -82,6 +91,10 @@ So in a browser (like Chrome), go to http://localhost:1234.
 
 ### Callback functions
  - What does it mean?
+ - Explain Javascript's function variable
+ - Example
+
+### Inserting images
  - Example
 
 ### Asynchronous calls
@@ -89,3 +102,8 @@ So in a browser (like Chrome), go to http://localhost:1234.
  - .then()
  - .error()
  - Special mention of Futures and Promises
+
+### Cookies & LocalStorage
+ - What are cookies?
+ - What is LocalStorage?
+ - How to use LocalStorage?

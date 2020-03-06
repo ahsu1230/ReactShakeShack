@@ -7,10 +7,10 @@ import {
   Switch
 } from 'react-router-dom';
 
-import { ErrorPage } from './components/error/error.js';
-import { HomePage } from './components/home/home.js';
+import { QuitPage } from './quit/quit.js';
+import { HomePage } from './home/home.js';
 
-const Error = () => <ErrorPage/>;
+const Quit = () => <QuitPage/>;
 const Home = () => <HomePage/>;
 
 class AppContainer extends React.Component {
@@ -19,6 +19,7 @@ class AppContainer extends React.Component {
             <Router>
                 <Switch>
                     <Route path="/" exact component={Home}/>
+                    <Route path="/quit" component={Quit}/>
                 </Switch>
             </Router>
         );

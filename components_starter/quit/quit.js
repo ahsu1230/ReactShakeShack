@@ -1,14 +1,14 @@
 'use strict';
-require('./home.styl');
+require('./quit.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-export class HomePage extends React.Component {
+export class QuitPage extends React.Component {
     render() {
         return (
-            <div id="view-home">
-                <h1>Home Page</h1>
+            <div id="view-quit">
+                <h1>I Quit!</h1>
             </div>
         );
     }
