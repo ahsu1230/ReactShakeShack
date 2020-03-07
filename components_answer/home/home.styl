@@ -1,2 +1,86 @@
+colorBlack = #070605
+colorGreen = #54A432
+colorRed = #D80300
+colorWhite = #FFFFFF
+colorLightGray = #CCCCCC
+
 #view-home
-    color: red
+    width: 720px
+    margin: 0 auto
+    color: colorBlack
+
+    & #section-add-form
+        position: relative
+        padding-bottom: 24px
+        border-bottom: 1px solid colorLightGray
+        font-size: 14px
+
+        & select, input
+            width: 120px
+            margin-right: 24px
+            font-family: 'Helvetica'
+            font-size: 14px
+
+        & span
+            margin-right: 4px
+
+        & button
+            position: absolute
+            right: 0
+            bottom: 24px
+            margin-top: 12px
+            padding: 6px 12px
+            border: none
+            border-radius: 4px
+            outline: none
+            background-color: colorGreen
+            color: colorWhite
+            font-size: 14px
+
+            &:hover
+                filter: brightness(1.1)
+                cursor: pointer
+
+    & #section-order-list
+        & ul
+            margin: 0
+            padding: 0
+
+        & li
+            position: relative
+            height: 64px
+            line-height: 64px
+            border-bottom: 1px solid colorLightGray
+            list-style: none
+
+            &.subheader span
+                font-weight: 700
+
+            & span
+                display: inline-block
+
+            & .home-row-id
+                width: 48px
+            & .home-row-name
+                width: 160px
+            & .home-row-food
+                width: 160px
+            & .home-row-num
+                width: 48px
+
+            & button
+                position: absolute
+                top: 50%
+                right: 0
+                transform: translateY(-50%)
+                padding: 6px 12px
+                border: none
+                border-radius: 4px
+                outline: none
+                background-color: colorRed
+                color: colorWhite
+                font-size: 14px
+
+                &:hover
+                    filter: brightness(1.1)
+                    cursor: pointer

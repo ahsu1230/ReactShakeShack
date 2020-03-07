@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-const DEFAULT_FOOD_CHOICE = "burger";
+const DEFAULT_FOOD_CHOICE = "burgers";
 /*
     Order objects look like:
     {
@@ -99,6 +99,7 @@ export class HomePage extends React.Component {
         this.setState({
             orderList: orderList
         });
+        window.alert("You've deleted order " + order.id);
     }
 
     render() {
@@ -107,13 +108,20 @@ export class HomePage extends React.Component {
             totalNumOrders += order.num;
         });
         const rows = this.state.orderList.map((o, index) => {
-            return (<li key={index}><HomeRow order={o} onClickDelete={this.onClickDeleteOrder}/></li>);
+            return (<HomeRow key={index} order={o} onClickDelete={this.onClickDeleteOrder}/>);
         });
 
         let quitButton = (<div></div>);
         if (totalNumOrders >= 10) {
             quitButton = (<Link to="/quit">Quit Now</Link>);
         }
+
+        let orderSubheader = {
+            id: "Id",
+            name: "Name",
+            food: "Food",
+            num: "Number"
+        };
 
         return (
             <div id="view-home">
@@ -124,7 +132,7 @@ export class HomePage extends React.Component {
                     <form>
                         <div>
                             <select id="food" onChange={this.onChangeFood}>
-                                <option value="burger">Burger</option>
+                                <option value="burgers">Burgers</option>
                                 <option value="fries">Fries</option>
                                 <option value="shake">Shake</option>
                             </select>
@@ -132,13 +140,14 @@ export class HomePage extends React.Component {
                             <input type="text" value={this.state.inputOrderNum} onChange={this.onChangeNum}/>
                             <span>Your name:</span>
                             <input type="text" value={this.state.inputOrderName} onChange={this.onChangeName} placeholder="i.e. Austin"/>
-                            </div>
-                        <button onClick={this.onClickAddOrder}>Add to Orders</button>
+                            <button onClick={this.onClickAddOrder}>Add to Orders</button>
+                        </div>
                     </form>
                 </section>
 
                 <section id="section-order-list">
                     <h2>Order List:</h2>
+                    <HomeRow order={orderSubheader} isSubHeader={true}/>
                     <ul>
                         {rows}
                     </ul>
@@ -163,14 +172,24 @@ class HomeRow extends React.Component {
 
     render() {
         const order = this.props.order;
+        const isSubHeader = this.props.isSubHeader;
+
+        let liClassName = "home-row";
+        let deleteButton;
+        if (isSubHeader) {
+            liClassName += " subheader";
+            deleteButton = (<div></div>);
+        } else {
+            deleteButton = (<button onClick={this.handleClickDelete}>Delete Order</button>);
+        }
         return (
-            <div>
-                <span>{order.id}</span>
-                <span>{order.name}</span>
-                <span>{order.food}</span>
-                <span>{order.num}</span>
-                <button onClick={this.handleClickDelete}>Delete Order</button>
-            </div>
+            <li className={liClassName}>
+                <span className="home-row-id">{order.id}</span>
+                <span className="home-row-name">{order.name}</span>
+                <span className="home-row-food">{order.food}</span>
+                <span className="home-row-num">{order.num}</span>
+                {deleteButton}
+            </li>
         );
     }
 }
