@@ -32,10 +32,12 @@ export class HomePage extends React.Component {
                 <section id="section-add-form">
                     <h2>New Order Form</h2>
                     <form>
+                        {/* Add your <input> fields here*/}
                     </form>
                 </section>
 
                 <section id="section-order-list">
+                    {/* Add your <ul> and <li> here*/}
                 </section>
             </div>
         );

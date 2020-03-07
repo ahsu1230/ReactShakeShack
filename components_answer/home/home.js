@@ -3,6 +3,7 @@ require('./home.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { API } from '../api.js';
 
 const DEFAULT_FOOD_CHOICE = "burgers";
 /*
@@ -30,6 +31,15 @@ export class HomePage extends React.Component {
         this.onChangeNum = this.onChangeNum.bind(this);
         this.onClickAddOrder = this.onClickAddOrder.bind(this);
         this.onClickDeleteOrder = this.onClickDeleteOrder.bind(this);
+    }
+
+    componentDidMount() {
+        API.getAllStoredOrders()
+            .then(orderList => {
+                this.setState({
+                    orderList: orderList
+                });
+            });
     }
 
     onChangeFood(event) {
@@ -64,42 +74,33 @@ export class HomePage extends React.Component {
             name: this.state.inputOrderName,
             num: this.state.inputOrderNum
         };
-        let orderList = this.state.orderList;
-        orderList.push(newOrder);
 
-        // Update orderList & Reset other fields
-        this.setState({
-            orderList: orderList,
-            orderCounter: this.state.orderCounter + 1,
-            inputOrderNum: 0,
-            inputOrderName: "",
-            inputOrderFood: DEFAULT_FOOD_CHOICE
-        });
+        API.storeOrder(newOrder)
+            .then(orderList => {
+                // Update orderList & reset other fields
+                this.setState({
+                    orderList: orderList,
+                    orderCounter: this.state.orderCounter + 1,
+                    inputOrderNum: 0,
+                    inputOrderName: "",
+                    inputOrderFood: DEFAULT_FOOD_CHOICE
+                });
+            }, err => {
+                window.alert(err);
+            });
     }
 
     onClickDeleteOrder(order) {
         console.log("Delete! " + order.id);
-        let orderList = this.state.orderList;
-        let index = -1;
-        for (let i = 0; i < orderList.length; i++) {
-            if (orderList[i].id == order.id) {
-                index = i;
-                break;
-            }
-        }
-
-        if (index == -1) {
-            console.log("Order not found... ");
-            return; // not found... do nothing
-        }
-        orderList.splice(index, 1)
-
-        // Cannot directly modify this.state.orderList
-        // Must always use this.setState(...)!
-        this.setState({
-            orderList: orderList
-        });
-        window.alert("You've deleted order " + order.id);
+        API.deleteOrder(order)
+            .then(orderList => {
+                this.setState({
+                    orderList: orderList
+                });
+                window.alert("You've deleted order " + order.id);
+            }, err => {
+                window.alert(err);
+            });
     }
 
     render() {
@@ -131,7 +132,8 @@ export class HomePage extends React.Component {
                     <h2>New Order Form</h2>
                     <form>
                         <div>
-                            <select id="food" onChange={this.onChangeFood}>
+                            <select id="food" value={this.state.inputOrderFood}
+                                    onChange={this.onChangeFood}>
                                 <option value="burgers">Burgers</option>
                                 <option value="fries">Fries</option>
                                 <option value="shake">Shake</option>

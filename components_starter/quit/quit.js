@@ -9,6 +9,8 @@ export class QuitPage extends React.Component {
         return (
             <div id="view-quit">
                 <h1>I Quit!</h1>
+                {/* Add an image here*/}
+                {/* Add a Link back to home page here*/}
             </div>
         );
     }

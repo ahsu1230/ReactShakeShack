@@ -1,4 +1,4 @@
-# ReactForNoobs
+# React with ShakeShack
 A very basic guide to working with ReactJs and Stylus.
  - ReactJs is a popular web framework created by Facebook (https://reactjs.org/)
  - Stylus is a CSS pre-processor (https://stylus-lang.com/)
@@ -6,7 +6,7 @@ A very basic guide to working with ReactJs and Stylus.
 ## Objective
 Today, you will be creating an order management system at your favorite fast food chain Shake Shack Burgers!
 In this exercise, you will learn the following concepts:
- - HTML & CSS Basics
+ - HTML DOM & CSS Basics
  - CSS Selectors
  - Using `<button>` and `onClick`
  - Using `<input>` and `onChange`
@@ -50,6 +50,7 @@ If you would like to see what the final app should look like, replace `<THIS>` w
  - How to select a class
  - How to select an element INSIDE a class
  - How to select a class INSIDE another class
+ - How to use CSS Pre-Processors
  - How to use `stylus`
 
 ### Buttons and OnClick
