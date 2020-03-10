@@ -44,15 +44,43 @@ To get your project working, you can start the guide [here](./resources/00_intro
 
 ## HTML DOM & CSS Basics
 ##### HTML
-Hypertext Markup Language 
-The most basic building block of the Web. It defines the meaning and structure of web content. It defines where things are and what they are. 
+ - Hypertext Markup Language 
+ - The most basic building block of the Web. It defines the meaning and structure of web content. It defines where things are and what they are. 
+ - A simple HTML Document will have 
+   - The `<!DOCTYPE html>` declaration defines this document to be HTML5
+   - The `<html>` element is the root element of an HTML page
+   - The `<head>` element contains meta information about the document
+   - The `<title>` element specifies a title for the document
+   - The `<body>` element contains the visible page content
+   - The `<h1>` element defines a large heading
+   - The `<p>` element defines a paragraph
+   - ```
+     <!DOCTYPE html>
+     <html>
+      <head>
+       <title>Page Title</title>
+      </head>
+      <body>
+       <h1>My First Heading</h1>
+       <p>My first paragraph.</p>
+      </body>
+     </html>
+     ```
+ 
 ##### DOM
-Direct Object Model
-DOM is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+ - Direct Object Model
+ - DOM is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+ 
 ##### CSS
-Cascading Style Sheet
-CSS describes how HTML elements should be displayed. CSS describes how things look. 
+ - Cascading Style Sheet
+ - CSS describes how HTML elements should be displayed. CSS describes how things look. 
 ##### EXCEPTION
-Positioning is shared among HTML and CSS. 
+ - Positioning is shared among HTML and CSS. 
 
+## CSS Selectors 
+ - CSS selectors are used to "find" (or select) the HTML elements you want to style
+ - Types of CSS Selectors
+   - Simple selectors (select elements based on name, id, class)
+   - Combinator selectors (select elements based on a specific relationship between them)
+     - A combinator is something that explains the relationship between the selectors
 
