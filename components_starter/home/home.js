@@ -19,25 +19,29 @@ export class HomePage extends React.Component {
     constructor() {
         super();
         this.state = {
+            orderList: [],
             // TODO: should be filled
         }
     }
 
     render() {
+        const list = this.state.orderList;
         // TODO: there should be processing here
+
         return (
             <div id="view-home">
                 <h1>Shake Shack Orders</h1>
 
                 <section id="section-add-form">
-                    <h2>New Order Form</h2>
                     <form>
                         {/* Add your <input> fields here*/}
+
                     </form>
                 </section>
 
                 <section id="section-order-list">
                     {/* Add your <ul> and <li> here*/}
+                    {list}
                 </section>
             </div>
         );

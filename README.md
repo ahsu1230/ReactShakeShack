@@ -22,6 +22,8 @@ In this exercise, you will learn the following concepts:
  - Cookies & LocalStorage
 
 ## Getting Started
+You will first need to install [nodeJS and npm](https://www.npmjs.com/get-npm).
+
 Traverse to the root directory (same directory as `index.html`).
 ```
 npm install
@@ -37,74 +39,5 @@ In your index.html, look for the following line:
 Make sure `<THIS>` is `components_starter`.
 If you would like to see what the final app should look like, replace `<THIS>` with `components_answer`.
 
-### HTML & CSS Basics
- - What is a DOM?
- - div vs. span
- - block vs. inline vs. inline-block
- - box-model: width, height, margin, padding, border
-
-### CSS Selectors
- - Using ids vs. classes
- - For the most part, you should be using classes. Give more descriptive names using kebab-case
- - How to select an element
- - How to select a class
- - How to select an element INSIDE a class
- - How to select a class INSIDE another class
- - How to use CSS Pre-Processors
- - How to use `stylus`
-
-### Buttons and OnClick
- - How to use `<button>`
- - How to use it with `onClick`
-
-### Inputs and onChange
- - How to use `<input>` as a text input field
- - How to use it with `onChange`
- - How to use `<input>` as a dropdown menu
-
-### React Links
- - How to use `<Link>` instead of `<a>`
-
-### React Component Lifecycles
- - What is a React Component?
- - render() function, returns a single HTML DOM
- - constructor()
- - componentDidMount() <- don't worry too much yet
- - componentDidUpdate() <- don't worry too much yet
-
-### React States
- - what is it for?
- - how to initialize in constructor
- - how to use in render
-
-### React Parent-child relationships
- - How to define another Component
- - How to inject it into a "parent" component?
-
-### Creating Lists with React
- - What are `<ul>` and `<li>`?
- - How to use a for loop to create several `<li>` elements and add to render()
-
-### React Props
- - What is it for?
- - how to use in render
- - how to change it? (Can only be changed from parent component)
-
-### Callback functions
- - What does it mean?
- - Explain Javascript's function variable
- - Example
-
-### Inserting images
- - Example
-
-### Asynchronous calls
- - What is synchronous vs. asynchronous?
- - .then()
- - .error()
- - Special mention of Futures and Promises
-
-### Cookies & LocalStorage
- - What are cookies?
- - What is LocalStorage?
- - How to use LocalStorage?
+## Project Guide
+To get your project working, you can start the guide [here](./resources/00_intro_guide.md).
