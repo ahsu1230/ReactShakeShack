@@ -41,3 +41,18 @@ If you would like to see what the final app should look like, replace `<THIS>` w
 
 ## Project Guide
 To get your project working, you can start the guide [here](./resources/00_intro_guide.md).
+
+## HTML DOM & CSS Basics
+##### HTML
+Hypertext Markup Language 
+The most basic building block of the Web. It defines the meaning and structure of web content. It defines where things are and what they are. 
+##### DOM
+Direct Object Model
+DOM is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+##### CSS
+Cascading Style Sheet
+CSS describes how HTML elements should be displayed. CSS describes how things look. 
+##### EXCEPTION
+Positioning is shared among HTML and CSS. 
+
+
