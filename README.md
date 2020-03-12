@@ -197,6 +197,33 @@ To get your project working, you can start the guide [here](./resources/00_intro
        );
       }
      }
-    ```
+     ```
+
+## React parent-children relationships
+ - If a parent component wants to feed data to a child compenent, it simply pasess it via props.
+ - Example:
+   - In this example, BookList component contains data for a list of books. The Book component can receive and use those fields contained in the props parameter to its function.
+   - ```
+     function BookList() {
+      const list = [
+       { title: 'A Christmas Carol', author: 'Charles Dickens' },
+       { title: 'The Mansion', author: 'Henry Van Dyke' },
+      ]
+      return (
+       <ul>
+        {list.map((book, i) => <Book title={book.title} author={book.author} key={i} />)}
+       </ul>
+      )
+     }
+
+     function Book(props) {
+      return (
+       <li>
+        <h2>{props.title</h2>
+        <div>{props.author}</div>
+       </li>
+      )
+     }
+     ```
  
 
