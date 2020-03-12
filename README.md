@@ -229,23 +229,87 @@ p {
      
 ## Creating lists (`<ul>` & `<li>`)
  - ul = unordered list 
- - li = each list item 
- - As seen in the parent-children relationships, ul is used for unordered lists and li are used for the list items. 
+ - li = each list item
+ - As seen in the parent-children relationships, ul is used for unordered lists and li are used for the list items inside that list.
+ 
+Example with HTML:
+```
+<h1>My Favorite Foods</h1>
+<ul>
+    <li>Fried Chicken</li>
+    <li>Sushi</li>
+    <li>Carne Asada Tacos</li>
+</ul>
+```
+
+Example with React: 
+
+You can use `.map(...)` to apply a function to a list of elements.
+The `map` function is often used to change the elements in a list (like a "mapping" of sorts). Essentially, you are iterating over all the elements in the list and creating a new value. In this case, we are taking a list of objects (book information with title and author) and creating a new list of `<li>` elements. Each `<li>` element has the book title and author.
+This new list is called `listItems` which we then insert into the resulting HTML.
+```
+render() {
+    const list = [
+        { title: 'A Christmas Carol', author: 'Charles Dickens' },
+        { title: 'The Mansion', author: 'Henry Van Dyke' },
+    ];
+    const listItems = list.map((book, i) => <li key={i}>{book.title} by {book.author}</li>);
+
+    return (
+        <ul>
+            {listItems}
+        </ul>
+    );
+}
+```
  
 ## React `props`
  - Props are arguments passed into React components
- - Do not modify the props when you declare a function
- - Example:
-   - ```
-     function sum(a,b) {
-       return a + b;
-     }
-     ```
-   - Not 
-   - ```
-     function withdraw(account,amount) {
-       account.total -= amount;
-     }
+ - If a Component receives arguments, you can access those variables using `props`.
+ 
+Example: This is a Book component that receives 2 values as arguments. A `title` and an `author`.
+To access them, we can simply use `props.title` and `props.author`.
+```
+class Book extends React.Component {
+    render() {
+        return (
+            <li>
+                <h2>{props.title}</h2>
+                <div>{props.author}</div>
+                ...
+            </li>
+        );
+    }
+}
+```
+
+To pass arguments, you could simply do something like this:
+```
+<Book title="The Mansion" author="Henry Van Dyke"/>
+```
+And this will render a Book component with the respective values.
+
+To take this a step further, this is often useful when you have parent-child relationships between React Components.
+For example, let's say we had a parent component, BookList, render a list of Books.
+Inside the `render()` function of the parent, BookList, you could have it render a list of `<Book>`s
+```
+class BookList extends React.Component {
+    render() {
+        const list = [
+            { title: 'A Christmas Carol', author: 'Charles Dickens' },
+            { title: 'The Mansion', author: 'Henry Van Dyke' },
+        ];
+        const listItems = list.map((book, i) => <Book key={i} title={book.title} author={book.author}/>);
+
+        return (
+            <ul>
+                {listItems}
+            </ul>
+        );
+    }
+}
+```
+ - It is important to note that a child should NOT be editing `props` values. Only the Parent should! So in this example, `Book` Components should never change the value of `props.title` or `props.author`. Those values must be changed in the `list` variable in `BookList` so that the values appropriately pass to every `Book`.
 
 ## Callback functions
 
