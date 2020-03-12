@@ -225,5 +225,33 @@ To get your project working, you can start the guide [here](./resources/00_intro
       )
      }
      ```
+     
+## Creating lists (`<ul>` & `<li>`)
+ - ul = unordered list 
+ - li = each list item 
+ 
+## React `props`
+ - Props are arguments passed into React components
+ - Do not modify the props when you declare a function
+ - Example:
+   - ```
+     function sum(a,b) {
+       return a + b;
+     }
+     ```
+   - Not 
+   - ```
+     function withdraw(account,amount) {
+       account.total -= amount;
+     }
+
+## Callback functions
+
+## Inserting images
+
+## Asynchronous function calls
+
+## Cookies & LocalStorage
+     
  
 
