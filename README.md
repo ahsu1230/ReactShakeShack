@@ -128,8 +128,8 @@ To get your project working, you can start the guide [here](./resources/00_intro
      - A combinator is something that explains the relationship between the selectors
      
 ## Using `<button>` and `onClick` 
- - Button creates a element that can be pressed
- - the onclick event occurs when the user clicks on a button  
+ - button creates a element that can be pressed
+ - the onClick event occurs when the user clicks on a button  
  - Example:
    - ```
      buttonName = (<button onClick={function}>Text</button>);
@@ -137,5 +137,17 @@ To get your project working, you can start the guide [here](./resources/00_intro
    - ```
      deleteButton = (<button onClick={this.handleClickDelete}>Delete Order</button>);
      ```
+     
 ## Using `<input>` and `onChange`
+ - input is what the user wants to change 
+ - onChange attribute fires the moment when the value of the element is changed
+ - Example:
+   - ```
+     let newFood = event.target.value;
+      console.log("Changed food " + newFood);
+      this.setState({
+       inputOrderFood: newFood
+      });
+     ```
+## Using React `<Link>`
  - 
