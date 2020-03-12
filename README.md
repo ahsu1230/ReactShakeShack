@@ -126,6 +126,27 @@ To get your project working, you can start the guide [here](./resources/00_intro
    - Simple selectors (select elements based on name, id, class)
    - Combinator selectors (select elements based on a specific relationship between them)
      - A combinator is something that explains the relationship between the selectors
+
+## Using React `function`
+ - To make functions you need two things to define a function
+   - First
+     - Create your function names inside the constructor() using this format 
+     - ```
+       export class Page extends React.Component {
+        constructor(){
+         this.functionName = this.functionName.bind(this);
+        }
+       ```
+   - Second
+     - You create your function inside this the whole React.Component Scope
+     - ```
+       functionName() {
+        console.log("Text");
+        let newOrder = {
+            variable: this.state.input,
+            variable2: this.state.input2
+        };
+        ```
      
 ## Using `<button>` and `onClick` 
  - button creates a element that can be pressed
@@ -134,6 +155,7 @@ To get your project working, you can start the guide [here](./resources/00_intro
    - ```
      buttonName = (<button onClick={function}>Text</button>);
      ```
+     - The function here is defined in the constructor that we mentioned at the top
    - ```
      deleteButton = (<button onClick={this.handleClickDelete}>Delete Order</button>);
      ```
@@ -149,5 +171,32 @@ To get your project working, you can start the guide [here](./resources/00_intro
        inputOrderFood: newFood
       });
      ```
+
 ## Using React `<Link>`
- - 
+ - Links are buttons that you can jump to other documents when pressed 
+ - ??
+ 
+## React component lifecycles
+ - Every React.Component class has several "lifecycle methods" that you can override to run code at particular times in the process. 
+ - ??
+ 
+## React `states` 
+ - the state object is where you store property values that belongs to the component
+ - Example:
+   - ```
+     class Car extends React.Component {
+      constructor(props) {
+       super(props);
+       this.state = {brand: "Toyota"};
+      }
+      render() {
+       return (
+        <div>
+         <h1>My Car</h1>
+        </div>
+       );
+      }
+     }
+    ```
+ 
+
