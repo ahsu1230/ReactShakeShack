@@ -174,11 +174,30 @@ To get your project working, you can start the guide [here](./resources/00_intro
 
 ## Using React `<Link>`
  - Links are buttons that you can jump to other documents when pressed 
- - ??
+ - Example:
+   - To another website (absolute path)
+   - ```
+     <Link to="www.google.com">Link to Google</Link>
+     ```
+   - To another page on this website (relative path)
+   - ```
+     <Link to="/quit">Quit Now</Link>
+     ```
  
 ## React component lifecycles
  - Every React.Component class has several "lifecycle methods" that you can override to run code at particular times in the process. 
- - ??
+ - Every time a variable changes the "render" function gets called 
+ - Every React.component has one render function
+ - Every render function returns an HTML
+ - You can only return one HTML element 
+ - Example: 
+   - ```
+     class Welcome extends React.Component {
+       render() {
+        return <h1>Hello, {this.props.name}</h1>;
+       }
+     }
+     
  
 ## React `states` 
  - the state object is where you store property values that belongs to the component
