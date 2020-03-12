@@ -229,6 +229,7 @@ To get your project working, you can start the guide [here](./resources/00_intro
 ## Creating lists (`<ul>` & `<li>`)
  - ul = unordered list 
  - li = each list item 
+ - As seen in the parent-children relationships, ul is used for unordered lists and li are used for the list items. 
  
 ## React `props`
  - Props are arguments passed into React components
@@ -248,10 +249,17 @@ To get your project working, you can start the guide [here](./resources/00_intro
 ## Callback functions
 
 ## Inserting images
-
+ - Inserting images have 2 steps. Import the image by telling the webpack the javaScript file uses the image and then get the image from the console. Then you can use the image how you want. 
+ - Example:
+   - ```
+     import imageName from './imageName.png';
+     console.log(imageName);
+     function Header() {
+      return <img src={imageName} alt = "imageName" />;
+     }
+     ```
+ 
 ## Asynchronous function calls
 
 ## Cookies & LocalStorage
      
- 
-
