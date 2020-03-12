@@ -126,4 +126,16 @@ To get your project working, you can start the guide [here](./resources/00_intro
    - Simple selectors (select elements based on name, id, class)
    - Combinator selectors (select elements based on a specific relationship between them)
      - A combinator is something that explains the relationship between the selectors
-
+     
+## Using `<button>` and `onClick` 
+ - Button creates a element that can be pressed
+ - the onclick event occurs when the user clicks on a button  
+ - Example:
+   - ```
+     buttonName = (<button onClick={function}>Text</button>);
+     ```
+   - ```
+     deleteButton = (<button onClick={this.handleClickDelete}>Delete Order</button>);
+     ```
+## Using `<input>` and `onChange`
+ - 
