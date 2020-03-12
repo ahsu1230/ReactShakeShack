@@ -70,10 +70,53 @@ To get your project working, you can start the guide [here](./resources/00_intro
 ##### DOM
  - Direct Object Model
  - DOM is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+ - An example of a DOM and Javascript Document could look like this:
+   - ```
+     <html>
+      <head>
+       <script>
+        window.onload = function() {
+         const heading = document.createElement("h1");
+         const heading_text = document.createTextNode("Big Head!");
+         heading.appendChild(heading_text);
+         document.body.appendChild(heading);
+        }
+       </script>
+      </head>
+      <body>
+      </body>
+     </html>
+     ```
  
 ##### CSS
  - Cascading Style Sheet
  - CSS describes how HTML elements should be displayed. CSS describes how things look. 
+ - An example of a CSS document could look like this:
+   - ```
+     <!DOCTYPE html>
+     <html>
+      <head>
+       <style>
+        body {
+         background-color: lightblue;
+        }
+        h1 {
+         color: white;
+         text-align: center;
+        }
+        p {
+         font-family: verdana;
+         font-size: 20px;
+        }
+       </style>
+      </head>
+      <body>
+       <h1>My First CSS Example</h1>
+       <p>This is a paragraph.</p>
+      </body>
+     </html>
+     ```
+
 ##### EXCEPTION
  - Positioning is shared among HTML and CSS. 
 
