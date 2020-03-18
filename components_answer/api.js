@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var ORDER_COUNTER = 0;
 var ORDER_LIST = "order_list";
@@ -24,7 +24,8 @@ function storeOrder(order) {
             // If order is invalid, then reject!
             if (order.id <= 0 || order.num <= 0 || order.name == "") {
                 reject("Invalid Order!");
-            } else { // Otherwise, change list and resolve
+            } else {
+                // Otherwise, change list and resolve
                 let list = window.localStorage.getItem(ORDER_LIST) || "[]";
                 list = JSON.parse(list);
                 list.push(order);
@@ -54,8 +55,9 @@ function deleteOrder(order) {
             // If order is invalid (not found), then reject!
             if (index == -1) {
                 reject("Order not found!");
-            } else { // Otherwise, change list and resolve!
-                list.splice(index, 1)
+            } else {
+                // Otherwise, change list and resolve!
+                list.splice(index, 1);
                 window.localStorage.setItem(ORDER_LIST, JSON.stringify(list));
                 resolve(list);
             }

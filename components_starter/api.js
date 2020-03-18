@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var ORDER_COUNTER = 0;
 var ORDER_LIST = "order_list";

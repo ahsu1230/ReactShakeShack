@@ -1,8 +1,8 @@
-'use strict';
-require('./home.styl');
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+"use strict";
+require("./home.styl");
+import React from "react";
+import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 
 const DEFAULT_FOOD_CHOICE = "burger";
 /*
@@ -19,9 +19,9 @@ export class HomePage extends React.Component {
     constructor() {
         super();
         this.state = {
-            orderList: [],
+            orderList: []
             // TODO: should be filled
-        }
+        };
     }
 
     render() {
@@ -33,10 +33,7 @@ export class HomePage extends React.Component {
                 <h1>Shake Shack Orders</h1>
 
                 <section id="section-add-form">
-                    <form>
-                        {/* Add your <input> fields here*/}
-
-                    </form>
+                    <form>{/* Add your <input> fields here*/}</form>
                 </section>
 
                 <section id="section-order-list">

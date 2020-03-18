@@ -1,9 +1,9 @@
-'use strict';
-require('./home.styl');
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
-import { API } from '../api.js';
+"use strict";
+require("./home.styl");
+import React from "react";
+import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
+import { API } from "../api.js";
 
 const DEFAULT_FOOD_CHOICE = "burgers";
 /*
@@ -25,7 +25,7 @@ export class HomePage extends React.Component {
             inputOrderFood: DEFAULT_FOOD_CHOICE,
             inputOrderName: "",
             inputOrderNum: 0
-        }
+        };
         this.onChangeFood = this.onChangeFood.bind(this);
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeNum = this.onChangeNum.bind(this);
@@ -34,12 +34,11 @@ export class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        API.getAllStoredOrders()
-            .then(orderList => {
-                this.setState({
-                    orderList: orderList
-                });
+        API.getAllStoredOrders().then(orderList => {
+            this.setState({
+                orderList: orderList
             });
+        });
     }
 
     onChangeFood(event) {
@@ -75,8 +74,8 @@ export class HomePage extends React.Component {
             num: this.state.inputOrderNum
         };
 
-        API.storeOrder(newOrder)
-            .then(orderList => {
+        API.storeOrder(newOrder).then(
+            orderList => {
                 // Update orderList & reset other fields
                 this.setState({
                     orderList: orderList,
@@ -85,22 +84,26 @@ export class HomePage extends React.Component {
                     inputOrderName: "",
                     inputOrderFood: DEFAULT_FOOD_CHOICE
                 });
-            }, err => {
+            },
+            err => {
                 window.alert(err);
-            });
+            }
+        );
     }
 
     onClickDeleteOrder(order) {
         console.log("Delete! " + order.id);
-        API.deleteOrder(order)
-            .then(orderList => {
+        API.deleteOrder(order).then(
+            orderList => {
                 this.setState({
                     orderList: orderList
                 });
                 window.alert("You've deleted order " + order.id);
-            }, err => {
+            },
+            err => {
                 window.alert(err);
-            });
+            }
+        );
     }
 
     render() {
@@ -109,12 +112,18 @@ export class HomePage extends React.Component {
             totalNumOrders += order.num;
         });
         const rows = this.state.orderList.map((o, index) => {
-            return (<HomeRow key={index} order={o} onClickDelete={this.onClickDeleteOrder}/>);
+            return (
+                <HomeRow
+                    key={index}
+                    order={o}
+                    onClickDelete={this.onClickDeleteOrder}
+                />
+            );
         });
 
-        let quitButton = (<div></div>);
+        let quitButton = <div></div>;
         if (totalNumOrders >= 10) {
-            quitButton = (<Link to="/quit">Quit Now</Link>);
+            quitButton = <Link to="/quit">Quit Now</Link>;
         }
 
         let orderSubheader = {
@@ -132,27 +141,39 @@ export class HomePage extends React.Component {
                     <h2>New Order Form</h2>
                     <form>
                         <div>
-                            <select id="food" value={this.state.inputOrderFood}
-                                    onChange={this.onChangeFood}>
+                            <select
+                                id="food"
+                                value={this.state.inputOrderFood}
+                                onChange={this.onChangeFood}
+                            >
                                 <option value="burgers">Burgers</option>
                                 <option value="fries">Fries</option>
                                 <option value="shake">Shake</option>
                             </select>
                             <span>Number:</span>
-                            <input type="text" value={this.state.inputOrderNum} onChange={this.onChangeNum}/>
+                            <input
+                                type="text"
+                                value={this.state.inputOrderNum}
+                                onChange={this.onChangeNum}
+                            />
                             <span>Your name:</span>
-                            <input type="text" value={this.state.inputOrderName} onChange={this.onChangeName} placeholder="i.e. Austin"/>
-                            <button onClick={this.onClickAddOrder}>Add to Orders</button>
+                            <input
+                                type="text"
+                                value={this.state.inputOrderName}
+                                onChange={this.onChangeName}
+                                placeholder="i.e. Austin"
+                            />
+                            <button onClick={this.onClickAddOrder}>
+                                Add to Orders
+                            </button>
                         </div>
                     </form>
                 </section>
 
                 <section id="section-order-list">
                     <h2>Order List:</h2>
-                    <HomeRow order={orderSubheader} isSubHeader={true}/>
-                    <ul>
-                        {rows}
-                    </ul>
+                    <HomeRow order={orderSubheader} isSubHeader={true} />
+                    <ul>{rows}</ul>
                 </section>
 
                 <h3>Total Number of Orders: {totalNumOrders}</h3>
@@ -180,9 +201,11 @@ class HomeRow extends React.Component {
         let deleteButton;
         if (isSubHeader) {
             liClassName += " subheader";
-            deleteButton = (<div></div>);
+            deleteButton = <div></div>;
         } else {
-            deleteButton = (<button onClick={this.handleClickDelete}>Delete Order</button>);
+            deleteButton = (
+                <button onClick={this.handleClickDelete}>Delete Order</button>
+            );
         }
         return (
             <li className={liClassName}>
