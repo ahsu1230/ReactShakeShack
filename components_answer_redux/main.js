@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { Store } from "./redux/reducer.js";
-import { QuitPage } from "./quit/quit.js";
+import QuitPage from "./quit/quit.js";
 import HomePage from "./home/home.js";
 
 const Home = () => <HomePage/>;

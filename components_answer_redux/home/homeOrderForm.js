@@ -40,7 +40,12 @@ class HomeOrderForm extends React.Component {
     onChangeInput = (event, input) => {
         console.log("OnChange input " + input);
         const value = event.target.value;
-        this.setState({ [input]: value });
+
+        if (input == "inputNumFood") {
+            this.setState({ [input]: parseInt(value) });
+        } else {
+            this.setState({ [input]: value });
+        }
     }
 
     render() {

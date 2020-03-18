@@ -15,7 +15,7 @@ class HomeOrderList extends React.Component {
         });
         let totalNumOrders = 0;
         this.props.orderList.forEach(order => {
-            totalNumberOrders += order.numFood;
+            totalNumOrders += order.numFood;
         });
         let deleteButton = (<div></div>);
         if (totalNumOrders >= 10) {
@@ -26,7 +26,7 @@ class HomeOrderList extends React.Component {
             <section id="home-order-list">
                 <h1>Order List</h1>
                 <ul>{rows}</ul>
-                Total number of orders: {totalNumOrders}
+                <p>Total number of orders: {totalNumOrders}</p>
                 {deleteButton}
             </section>
         );
