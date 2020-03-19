@@ -3,7 +3,8 @@ import "./homeOrderListItem.sass";
 import React from "react";
 import ReactDOM from "react-dom";
 import { connect } from 'react-redux';
-import { ACTION_TYPE_DELETE_ORDER } from '../redux/actions.js';
+import { dispatchDeleteOrder } from '../redux/actions.js';
+import API from '../api.js';
 
 class HomeOrderListItem extends React.Component {
     handleClickDelete = () => {
@@ -33,7 +34,7 @@ const mapStateToProps = (state) => {
 // Allow these dispatchXXX methods to be usable via Component's props
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchDeleteOrder: (order) => dispatch({type: ACTION_TYPE_DELETE_ORDER, value: order})
+        dispatchDeleteOrder: order => dispatchDeleteOrder(dispatch, order)
     };
 }
 

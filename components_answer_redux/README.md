@@ -1,5 +1,40 @@
 # Guide Notes
 
+## Pre-requisites
+Before beginning, I am assuming you understand the following concepts:
+ - HTML basics
+  - What is a DOM?
+  - `<div>` vs. `<span>`
+  - What is a `<h1>`? What is a `<p>`?
+  - What is a `<ul>` and `<li>`?
+  - What is an `<img>`?
+  - What is an `<a>`?
+  - In HTML, what do parent/children elements mean?
+
+ - CSS basics
+  - `margin` vs. `padding`
+  - The Box Model
+  - `display` vs. `inline` vs. `inline-block`
+  - Position: `static` vs. `relative` vs. `absolute`
+  - `id` vs. `class`
+  - With CSS, how do you select a parent element's child?
+
+ - Javascript basics
+  - Variables, if/else, loops
+  - Arrays `[]`
+  - Objects `{}`
+  - How to use `debugger`
+
+If there are some concepts you don't fully understand yet, please take the time to review them. They will be REALLY useful before diving into this project. You'll be learning a lot of different concepts in this guide, so it's best to already know the basics!
+
+In this guide, we will touch on the following concepts / tools which are common industry developing tools for modern web applications.
+ - ReactJs
+ - Modern Javascript (ES6)
+ - SASS
+ - Redux
+ - CSS Animations
+
+
 ## ADD HEADER + STYLE
  - Add home header and style header with sass (to black #070605, and fontFamily Helvetica, fontSize)
 
@@ -369,6 +404,7 @@ import src_img_quit from "../../assets/i_quit.jpg";
 ```
 
 ## Asynchronous Calls (with Redux)
+Look at thunk:
 ```
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
@@ -381,24 +417,127 @@ const store = createStore(
 
 Look at api.js
 ```
-var promise = new Promise(function(resolve, reject) {
-    setTimeout(function() {
-        if (API_WORKS) {
-            resolve();
-        } else {
-            reject("API store failed");
-        }
-    }, 1200);
-});
-return promise;
+function deleteOrder(order) {
+    var promise = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            if (API_WORKS) {
+                resolve();
+            } else {
+                reject("API delete failed");
+            }
+        }, API_WAIT_TIME_MS);
+    });
+    return promise;
+}
 ```
 // Promises, resolve, reject, setTimeout
 States then become requested -> success or failure
 This means we need 3 action types: `_BEGIN`, `_SUCCESS`, `_FAILURE` for every operation.
 
+Action:
+```
+export const ACTION_TYPE_DELETE_ORDER_BEGIN = "ACTION_DELETE_ORDER_BEGIN";
+export const ACTION_TYPE_DELETE_ORDER_SUCCESS = "ACTION_DELETE_ORDER_SUCCESS";
+export const ACTION_TYPE_DELETE_ORDER_FAIL = "ACTION_DELETE_ORDER_FAIL";
 
+export function dispatchDeleteOrder(dispatch, order) {
+    dispatch({type: ACTION_TYPE_DELETE_ORDER_BEGIN});
+    return API.deleteOrder(order)
+        .then(res => {
+            dispatch({type: ACTION_TYPE_DELETE_ORDER_SUCCESS, data: order});
+        })
+        .catch(err => {
+            dispatch({type: ACTION_TYPE_DELETE_ORDER_FAIL});
+            alert("An error occured! " + err);
+        });
+}
 
 ```
+
+Dispatch:
 ```
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchDeleteOrder: order => dispatchDeleteOrder(dispatch, order)
+    };
+}
+
+import {
+    ACTION_TYPE_DELETE_ORDER_BEGIN,
+    ACTION_TYPE_DELETE_ORDER_SUCCESS,
+    ACTION_TYPE_DELETE_ORDER_FAIL,
+} from '../redux/actions.js';
+import API from '../api.js';
+```
+
+Reducer:
+```
+case ACTIONS.ACTION_TYPE_DELETE_ORDER_BEGIN:
+    return {
+        ...state,
+    };
+case ACTIONS.ACTION_TYPE_DELETE_ORDER_SUCCESS:
+    let orderToDelete = action.data;
+    return {
+        ...state,
+        orderList: state.orderList.filter(o => o.id !== orderToDelete.id),
+    };
+case ACTIONS.ACTION_TYPE_DELETE_ORDER_FAIL:
+    return {
+        ...state,
+    };
+```
+
 
 ## Loading...
+Take a look at loading.js and loading.sass
+Include into home.js
+```
+import LoadingScreen from "../loading/loading.js";
+<LoadingScreen/>
+```
+
+No actions needed this time! The state will change based on other actions.
+Setup Reducer
+```
+const initialState = {
+    orderList: [],
+    showLoading: false
+};
+
+
+case ACTIONS.ACTION_TYPE_DELETE_ORDER_BEGIN:
+    return {
+        ...state,
+        showLoading: true // show loading screen when requested
+    };
+case ACTIONS.ACTION_TYPE_DELETE_ORDER_SUCCESS:
+    let orderToDelete = action.data;
+    return {
+        ...state,
+        orderList: state.orderList.filter(o => o.id !== orderToDelete.id),
+        showLoading: false // stop showing loading screen
+    };
+case ACTIONS.ACTION_TYPE_DELETE_ORDER_FAIL:
+    return {
+        ...state,
+        showLoading: false // stop showing loading screen
+    };
+```
+
+```
+const reduxMapStateToProps = (state) => {
+    return {
+        show: state.showLoading
+    };
+}
+```
+
+# Error handling?
+
+# Congratulations!
+You've finally finished! You may keep this repository for your own reference in the future.
+
+# Resources:
+https://redux.js.org/
+https://daveceddia.com/redux-tutorial/

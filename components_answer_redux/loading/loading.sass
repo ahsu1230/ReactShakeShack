@@ -1,0 +1,39 @@
+@import "../_constants.sass"
+
+#view-loading
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+#view-loading.show
+    display: block
+
+#loading-overlay
+    width: 100%
+    height: 100%
+    background-color: $colorBlack
+    opacity: 0.7
+
+#loading-container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    padding: 30px 90px
+    background-color: $colorWhite
+    text-align: center
+    border-radius: 6px
+
+#view-loading img
+    width: 32px
+    height: 32px
+    animation: 1.2s linear infinite spin
+
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(180deg)

@@ -30,16 +30,17 @@ class HomeOrderForm extends React.Component {
     }
 
     onChangeSelect = (event) => {
-        console.log("OnChange select " + event.target.value);
         const value = event.target.value;
+        console.log("OnChange select " + value);
+
         this.setState({
             inputFood: value
         });
     }
 
     onChangeInput = (event, input) => {
-        console.log("OnChange input " + input);
         const value = event.target.value;
+        console.log("OnChange input " + input + "->" + value);
 
         if (input == "inputNumFood") {
             this.setState({ [input]: parseInt(value) });
@@ -54,7 +55,7 @@ class HomeOrderForm extends React.Component {
                 <select id="food" onChange={this.onChangeSelect} value={this.state.inputFood}>
                     <option value="burgers">Burgers</option>
                     <option value="fries">Fries</option>
-                    <option value="shake">Shake</option>
+                    <option value="shakes">Shake</option>
                 </select>
 
                 <span>Number:</span>
@@ -88,7 +89,9 @@ const reduxMapStateToProps = (state) => {
 // Allow these dispatchXXX methods to be usable via Component's props
 const reduxMapDispatchToProps = (dispatch) => {
     return {
-        dispatchAddOrder: (order) => dispatch({type: ACTION_TYPE_ADD_ORDER, value: order})
+        dispatchAddOrder: order => {
+            dispatch({type: ACTION_TYPE_ADD_ORDER, data: order});
+        }
     };
 }
 
