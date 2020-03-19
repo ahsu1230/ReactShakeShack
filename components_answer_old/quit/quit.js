@@ -1,11 +1,11 @@
 "use strict";
-import "./quit.sass";
+require("./quit.styl");
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import src_img_quit from "../../assets/i_quit.jpg";
 
-export default class QuitPage extends React.Component {
+export class QuitPage extends React.Component {
     render() {
         return (
             <div id="view-quit">

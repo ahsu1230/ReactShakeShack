@@ -533,7 +533,7 @@ const reduxMapStateToProps = (state) => {
 }
 ```
 
-# Error handling?
+# Callback functions?
 
 # Congratulations!
 You've finally finished! You may keep this repository for your own reference in the future.
