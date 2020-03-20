@@ -12,18 +12,37 @@ class HomeOrderListItem extends React.Component {
     }
 
     render() {
-        const order = this.props.order;
+        let order;
+        let deleteButton;
+        let liClassName = "home-list-item";
+
+        if (this.props.isSubheader) {
+            liClassName += " subheader";
+            order = {
+                id: "Id",
+                name: "Name",
+                food: "Food",
+                numFood: "Number"
+            };
+        } else {
+            order = this.props.order;
+            deleteButton = (<button onClick={this.handleClickDelete}>
+                Delete Order
+            </button>);
+        }
+
         return (
-            <li>
+            <li className={liClassName}>
                 <span className="home-row-id">{order.id}</span>
                 <span className="home-row-name">{order.name}</span>
                 <span className="home-row-food">{order.food}</span>
                 <span className="home-row-num">{order.numFood}</span>
-                <button onClick={this.handleClickDelete}>Delete Order</button>
+                {deleteButton}
             </li>
         );
     }
 }
+
 
 /* Redux mappers */
 // Allow these states to be usable via Component's props

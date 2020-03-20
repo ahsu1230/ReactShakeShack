@@ -17,17 +17,18 @@ class HomeOrderList extends React.Component {
         this.props.orderList.forEach(order => {
             totalNumOrders += order.numFood;
         });
-        let deleteButton = (<div></div>);
+        let quitLink = (<div></div>);
         if (totalNumOrders >= 10) {
-            deleteButton = (<Link to="/quit">Too many orders. I quit!</Link>);
+            quitLink = (<Link to="/quit">Too many orders. I quit!</Link>);
         }
 
         return (
             <section id="home-order-list">
                 <h1>Order List</h1>
+                <HomeOrderListItem isSubheader={true}/>
                 <ul>{rows}</ul>
                 <p>Total number of orders: {totalNumOrders}</p>
-                {deleteButton}
+                {quitLink}
             </section>
         );
     }

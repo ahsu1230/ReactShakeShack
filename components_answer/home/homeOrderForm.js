@@ -52,6 +52,7 @@ class HomeOrderForm extends React.Component {
     render() {
         return (
             <section id="home-order-form">
+                <h2>New Order Form</h2>
                 <select id="food" onChange={this.onChangeSelect} value={this.state.inputFood}>
                     <option value="burgers">Burgers</option>
                     <option value="fries">Fries</option>
@@ -59,13 +60,17 @@ class HomeOrderForm extends React.Component {
                 </select>
 
                 <span>Number:</span>
-                <input type="text"
+                <input
+                    className="number"
+                    type="text"
                     onChange={(event) => this.onChangeInput(event, "inputNumFood")}
                     value={this.state.inputNumFood}
                 />
 
                 <span>Your name:</span>
-                <input type="text" placeholder="i.e. Austin"
+                <input
+                    className="name"
+                    type="text" placeholder="i.e. Austin"
                     onChange={(event) => this.onChangeInput(event, "inputName")}
                     value={this.state.inputName}
                 />

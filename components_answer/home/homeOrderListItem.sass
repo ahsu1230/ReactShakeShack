@@ -1,0 +1,40 @@
+@import "../_constants.sass"
+
+.home-list-item
+    position: relative
+    height: 64px
+    line-height: 64px
+    border-bottom: 1px solid $colorLightGray
+    list-style: none
+
+    &.subheader
+        font-weight: bold
+
+    & span
+        display: inline-block
+
+    & .home-row-id
+        width: 48px
+    & .home-row-name
+        width: 160px
+    & .home-row-food
+        width: 160px
+    & .home-row-num
+        width: 48px
+
+    & button
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translateY(-50%)
+        padding: 6px 12px
+        border: none
+        border-radius: 4px
+        outline: none
+        background-color: $colorRed
+        color: $colorWhite
+        font-size: 14px
+
+        &:hover
+            filter: brightness(1.1)
+            cursor: pointer
