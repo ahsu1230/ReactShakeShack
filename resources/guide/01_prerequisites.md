@@ -1,7 +1,8 @@
 # Pre-requisites
 
 Before beginning, I am assuming you understand the following concepts:
- - HTML basics
+
+### HTML basics
   - What is a DOM?
   - `<div>` vs. `<span>`
   - What is a `<h1>`? What is a `<p>`?
@@ -10,7 +11,7 @@ Before beginning, I am assuming you understand the following concepts:
   - What is an `<a>`?
   - In HTML, what do parent/children elements mean?
 
- - CSS basics
+### CSS basics
   - `margin` vs. `padding`
   - The Box Model
   - `display` vs. `inline` vs. `inline-block`
@@ -18,13 +19,13 @@ Before beginning, I am assuming you understand the following concepts:
   - `id` vs. `class`
   - With CSS, how do you select a parent element's child?
 
- - Javascript basics
+### Javascript basics
   - Variables, if/else, loops
   - Arrays `[]`
   - Objects `{}`
   - How to use `debugger`
 
- - Basic Command Prompt / Terminal commands
+### Basic Command Prompt / Terminal commands
   - `cd`
   - `dir` or `ls`
 
@@ -37,3 +38,5 @@ In this guide, we will touch on the following concepts / tools which are common 
  - Redux
  - SASS
  - CSS Animations
+
+[Click here to continue](./02_application_overview.md)

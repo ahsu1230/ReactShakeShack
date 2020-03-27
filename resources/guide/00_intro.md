@@ -38,10 +38,7 @@ If there are no errors, let's run our web application! In the root directory, ru
 parcel index.html
 ```
 You should see a "Server running at http://localhost:1234" or something similar.
-Open a browser (like Chrome) and go to that url link.
-You should see what your starting application renders!
-
-`Parcel` is a file-bundling tool, which means it is a tool that helps you bundle your coding files to quickly and automatically build a web application. If you're browser it at `http://localhost:1234` while parcel is running, whenever you change a javascript / css file, you will immediately see the changes visually in the browser!
+Open a browser (like Chrome) and go to that url link. You should see what your starting application renders!
 
 
 ## Project Directory

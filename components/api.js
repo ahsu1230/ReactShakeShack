@@ -1,49 +1,28 @@
 "use strict";
 
-var ORDER_COUNTER = 0;
-var ORDER_LIST = "order_list";
-var DELAY_TIME_MS = 500; // delay time in milliseconds
+const API_WORKS = true;         // turn this into false to see what happens
+const API_WAIT_TIME_MS = 1100;   // Wait time in milliseconds
 
-/*
-    Pretend that these functions take some time
+/* This function is meant to take a very long time (>1 second).
+ * It returns a promise,
+ * which is a "I-don't-have-the-data-now-but-will-give-you-later" object.
+ * Use resolve(...) to stop the promise and return a success case
+ * Use reject(...) to stop the promise and return an error case
  */
-
-function getAllStoredOrders() {
-    var promise = new Promise(function(resolve, reject) {
-        setTimeout(function() {
-            // TODO: Implement
-            // Must call resolve(...) with list of orders
-            // List of orders is retrieved from localStorage
-        }, DELAY_TIME_MS);
-    });
-    return promise;
-}
-
-function storeOrder(order) {
-    var promise = new Promise(function(resolve, reject) {
-        setTimeout(function() {
-            // TODO: Implement
-            // If order is invalid, must call reject(...) with error message
-            // If order is valid, must call resolve(...) with updated list of orders
-        }, DELAY_TIME_MS);
-    });
-    return promise;
-}
-
 function deleteOrder(order) {
     var promise = new Promise(function(resolve, reject) {
         setTimeout(function() {
-            // TODO: Implement
-            // If order is not found in list, must call reject(...) with error message
-            // If order is valid, must call resolve(...) with updated list of orders
-        }, DELAY_TIME_MS);
+            if (API_WORKS) {
+                resolve();
+            } else {
+                reject("API delete failed");
+            }
+        }, API_WAIT_TIME_MS);
     });
     return promise;
 }
 
 /* API functions to expose to other js files */
-export const API = {
-    getAllStoredOrders: getAllStoredOrders,
-    storeOrder: storeOrder,
+export default {
     deleteOrder: deleteOrder
-};
+}
