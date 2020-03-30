@@ -153,4 +153,4 @@ Every customer order should have its own ID. For example, the first order is ord
 - Print the orderCounter whenever the "Add Order" button is clicked.
 - Increment orderCounter whenever an order is added. *Hint* remember, orderCounter should be a state variable.
 
-[Continue](./09_redux_actions_reducers.md)
+[Continue](./09_react_lists.md)

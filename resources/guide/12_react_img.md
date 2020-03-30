@@ -20,4 +20,4 @@ import src_img from "../../assets/i_quit.jpg";
 1. Import the source of the quit image. You can find it in `../../assets/i_quit.jpg`. Or in other words, the assets folder from the root directory.
 2. Get the `<img>` to show up with the correct picture.
 
-[Continue](./13.md)
+[Continue](./13_redux_actions_reducers.md)

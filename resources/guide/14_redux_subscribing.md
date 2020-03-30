@@ -1,4 +1,4 @@
-# Introduction to Redux (Action and Reducers)
+# Introduction to Redux (Subscribers)
 
 So from the previous section, we've created our Actions and a Reducer.
 We've also connected it to our app so it knows about our Reducer.
@@ -106,3 +106,4 @@ export default connect(reduxMapStateToProps, reduxMapDispatchToProps)(MyComponen
 
 The exercise here is to have the HomeOrderForm dispatch an "Add Order" action to the Reducer. With this action, will be the new order data (Javascript object). The Reducer will receive this new order, add it to the central list. The reducer will automatically broadcast to all listening components that the list has changed. Our current component will automatically be notified that the new list is available and will automatically call its render() function, which can display the new changes to the central list.
 
+[Continue](./16_redux_more.md)

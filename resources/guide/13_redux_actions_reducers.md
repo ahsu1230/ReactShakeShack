@@ -104,4 +104,4 @@ ReactDOM.render(<Provider store={Store}><App/></Provider>,
     document.getElementById("root"));
 ```
 
-[Continue](./10_redux_subscribing.md)
+[Continue](./14_redux_subscribing.md)
