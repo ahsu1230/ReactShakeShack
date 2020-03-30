@@ -57,9 +57,10 @@ Another input we will use is the dropdown. This one is actually with a `<select>
 This is a dropdown menu with 3 options (Burgers, Fries, and Shakes). Every time the user changes their selection, the `this.OnChangeSelect` function will be called. You can also use the "event" object we used before (but this time named `e`) to figure out what the user ended up selecting.
 In this case, `e.target.value` will either be "burgers", "fries", or "shakes" which are the `values` described in each of the `<option>` tags.
 
-
 ## ShakeShack Exercise - Create inputs and select with hooked up OnChange handlers
+
 Inside `home/homeOrderForm.js`, you should see a `HomeOrderForm` Component defined.
+
 - Create one dropdown menu. This dropdown menu has 3 options: "Burgers", "Fries" and "Shakes".
 - Create two text input fields.
   - One input field is for a customer's name.
@@ -73,8 +74,10 @@ Each function can simply `console.log` the user's select value. Test to see if y
 At this point, we probably want some text to label the different input fields.
 Place `<span>Label Name</span>` next to the different input fields to "label" them so your user knows which field is for what kind of information.
 
-*Style*
+### Style
+
 Give this inputs and select the following styled propeties:
+
 - font family Helvetica
 - font size of 14px
 - A good amount of width. Use whatever makes sense for each input. For example, the number is probably a short value, so the input field can be more narrow.
@@ -84,4 +87,4 @@ Give this inputs and select the following styled propeties:
 Refer to this image for guidance:
 ![Cutout_Home_Form](../images/cutout_home_form.png)
 
-[Continue](./07_input_onchange.md)
+[Continue](./08_react_states.md)

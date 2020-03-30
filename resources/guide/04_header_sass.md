@@ -17,7 +17,8 @@ React applications work slightly different because HTML is done in Javascript fi
 
 Navigate to `components/home/home.js` to find the file that manages our home page.
 You should see this:
-```
+
+```javascript
 export class HomePage extends React.Component {
    render() {
        return (
@@ -54,7 +55,7 @@ To use these variables in SASS, take a look at `components/home/home.sass`.
 Notice at the top of this file, that it "imports" contents from `_constants.sass` using `@import "../_constants.sass"`. Now `home.sass` can use all the variables defined in `_.constants.sass`.
 
 We can use these variables like so:
-```
+```sass
 #view-home
    width: 720px
    margin: 0 auto
@@ -65,7 +66,7 @@ We can use these variables like so:
 ## Exercise: Styling the <h1>
 Style the `<h1>` that you just created. Give it a font-size of 26px and the color black.
 
-```
+```sass
 #view-home h1
     font-size: 26px
     color: $colorBlack

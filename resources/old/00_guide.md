@@ -223,8 +223,7 @@ onChangeInput(event, input) {
 ## INTRO REDUX - add order button to store
 ## INTRO REDUX - add to list
 ## INTRO REDUX - subscribe to list updates
-Redux is a javascript tool (commonly used with React) to provide applications a great way to handle "global variables and states".
-Without Redux, when we have use React, we have to pass values back and forth in between parent and children components.
+Redux is a javascript tool (commonly used with React) to provide applications a great way to handle "global variables and states".Without Redux, when we have use React, we have to pass values back and forth in between parent and children components.
 This can get very messy very quickly.
 
 With Redux, we can store global variables that can be used by any component.
