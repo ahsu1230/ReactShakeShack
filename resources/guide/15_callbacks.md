@@ -1,4 +1,4 @@
-# Callbacks
+# Reading: Callbacks
 
 Javascript is kind of weird. Javascript has a way to save functions as variables and then pass them as parameters to other functions. Wut?
 
@@ -62,4 +62,5 @@ doComplicatedTasks(successCallback(), ...)
 
 When you do the above, it will actually evaluate `successCallback()` and you end up passing the return value of that function into `doComplicatedTasks()`. If you're going to pass the function, do it without the parantheses. That way, javascript just holds the function and can pass it around without evaluating the function.
 
-[Continue](./20_finish_line.md)
+
+[Continue](./17_asynchronous_callbacks.md)
