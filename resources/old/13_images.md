@@ -1,2 +1,0 @@
-### Inserting images
- - Example
