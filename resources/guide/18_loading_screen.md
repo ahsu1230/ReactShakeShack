@@ -1,3 +1,5 @@
 # The Loading Screen
 
-[Continue](./19_callbacks.md)
+Coming Soon...
+
+[Continue](./19_localstorage.md)

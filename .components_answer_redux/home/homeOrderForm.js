@@ -2,8 +2,8 @@
 import "./homeOrderForm.sass";
 import React from "react";
 import ReactDOM from "react-dom";
-import { connect } from 'react-redux';
-import { ACTION_TYPE_ADD_ORDER } from '../redux/actions.js';
+import { connect } from "react-redux";
+import { ACTION_TYPE_ADD_ORDER } from "../redux/actions.js";
 
 const DEFAULT_FOOD = "burgers";
 
@@ -13,7 +13,7 @@ class HomeOrderForm extends React.Component {
         inputName: "",
         inputNumFood: 0,
         orderCounter: 1
-    }
+    };
 
     onClickAddButton = () => {
         console.log("Add button clicked!");
@@ -27,16 +27,16 @@ class HomeOrderForm extends React.Component {
         this.setState({
             orderCounter: this.state.orderCounter + 1
         });
-    }
+    };
 
-    onChangeSelect = (event) => {
+    onChangeSelect = event => {
         const value = event.target.value;
         console.log("OnChange select " + value);
 
         this.setState({
             inputFood: value
         });
-    }
+    };
 
     onChangeInput = (event, input) => {
         const value = event.target.value;
@@ -47,13 +47,16 @@ class HomeOrderForm extends React.Component {
         } else {
             this.setState({ [input]: value });
         }
-    }
+    };
 
     render() {
         return (
             <section id="home-order-form">
                 <h2>New Order Form</h2>
-                <select id="food" onChange={this.onChangeSelect} value={this.state.inputFood}>
+                <select
+                    id="food"
+                    onChange={this.onChangeSelect}
+                    value={this.state.inputFood}>
                     <option value="burgers">Burgers</option>
                     <option value="fries">Fries</option>
                     <option value="shakes">Shake</option>
@@ -63,21 +66,22 @@ class HomeOrderForm extends React.Component {
                 <input
                     className="number"
                     type="text"
-                    onChange={(event) => this.onChangeInput(event, "inputNumFood")}
+                    onChange={event =>
+                        this.onChangeInput(event, "inputNumFood")
+                    }
                     value={this.state.inputNumFood}
                 />
 
                 <span>Your name:</span>
                 <input
                     className="name"
-                    type="text" placeholder="i.e. Austin"
-                    onChange={(event) => this.onChangeInput(event, "inputName")}
+                    type="text"
+                    placeholder="i.e. Austin"
+                    onChange={event => this.onChangeInput(event, "inputName")}
                     value={this.state.inputName}
                 />
 
-                <button onClick={this.onClickAddButton}>
-                    Add to Orders
-                </button>
+                <button onClick={this.onClickAddButton}>Add to Orders</button>
             </section>
         );
     }
@@ -85,20 +89,23 @@ class HomeOrderForm extends React.Component {
 
 /* Redux mappers */
 // Allow these states to be usable via Component's props
-const reduxMapStateToProps = (state) => {
+const reduxMapStateToProps = state => {
     return {
         orderList: state.orderList
     };
-}
+};
 
 // Allow these dispatchXXX methods to be usable via Component's props
-const reduxMapDispatchToProps = (dispatch) => {
+const reduxMapDispatchToProps = dispatch => {
     return {
         dispatchAddOrder: order => {
-            dispatch({type: ACTION_TYPE_ADD_ORDER, data: order});
+            dispatch({ type: ACTION_TYPE_ADD_ORDER, data: order });
         }
     };
-}
+};
 
 // Connect component to redux
-export default connect(reduxMapStateToProps, reduxMapDispatchToProps)(HomeOrderForm);
+export default connect(
+    reduxMapStateToProps,
+    reduxMapDispatchToProps
+)(HomeOrderForm);

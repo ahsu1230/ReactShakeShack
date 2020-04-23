@@ -1,7 +1,7 @@
 "use strict";
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import * as ACTIONS from './actions';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import * as ACTIONS from "./actions";
 
 /* Initial state of store values - when the entire application starts up
  * Note: If the user switches pages, this data persists.
@@ -16,7 +16,7 @@ const initialState = {
 function reducer(state = initialState, action) {
     console.log("Reducer invoked with action: " + action.type);
 
-    switch(action.type) {
+    switch (action.type) {
         case ACTIONS.ACTION_TYPE_ADD_ORDER:
             let newOrder = action.data;
             return {
@@ -32,7 +32,9 @@ function reducer(state = initialState, action) {
             let orderToDelete = action.data;
             return {
                 ...state,
-                orderList: state.orderList.filter(o => o.id !== orderToDelete.id),
+                orderList: state.orderList.filter(
+                    o => o.id !== orderToDelete.id
+                ),
                 showLoading: false // stop showing loading screen
             };
         case ACTIONS.ACTION_TYPE_DELETE_ORDER_FAIL:
@@ -46,6 +48,4 @@ function reducer(state = initialState, action) {
     return state;
 }
 
-export const Store = createStore(
-    reducer, applyMiddleware(thunk)
-);
+export const Store = createStore(reducer, applyMiddleware(thunk));

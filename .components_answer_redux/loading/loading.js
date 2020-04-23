@@ -2,8 +2,8 @@
 import "./loading.sass";
 import React from "react";
 import ReactDOM from "react-dom";
-import { connect } from 'react-redux';
-import { ACTION_TYPE_HIDE_LOADING } from '../redux/actions.js';
+import { connect } from "react-redux";
+import { ACTION_TYPE_HIDE_LOADING } from "../redux/actions.js";
 import src_spinner from "../../assets/spinner.svg";
 
 class LoadingScreen extends React.Component {
@@ -12,10 +12,10 @@ class LoadingScreen extends React.Component {
         const show = this.props.show ? "show" : "";
         return (
             <div id="view-loading" className={show}>
-                <div id="loading-overlay"/>
+                <div id="loading-overlay" />
                 <div id="loading-container">
                     <h1>{message}</h1>
-                    <img src={src_spinner}/>
+                    <img src={src_spinner} />
                 </div>
             </div>
         );
@@ -23,16 +23,19 @@ class LoadingScreen extends React.Component {
 }
 
 // Allow these states to be usable via Component's props
-const reduxMapStateToProps = (state) => {
+const reduxMapStateToProps = state => {
     return {
         show: state.showLoading
     };
-}
+};
 
 // Allow these dispatchXXX methods to be usable via Component's props
-const reduxMapDispatchToProps = (dispatch) => {
+const reduxMapDispatchToProps = dispatch => {
     return {};
-}
+};
 
 // Connect component to redux
-export default connect(reduxMapStateToProps, reduxMapDispatchToProps)(LoadingScreen);
+export default connect(
+    reduxMapStateToProps,
+    reduxMapDispatchToProps
+)(LoadingScreen);

@@ -11,9 +11,9 @@ export default class HomePage extends React.Component {
         return (
             <div id="view-home">
                 <h1>Shake Shack Order Manager</h1>
-                <HomeOrderForm/>
-                <HomeOrderList/>
-                <LoadingScreen/>
+                <HomeOrderForm />
+                <HomeOrderList />
+                <LoadingScreen />
             </div>
         );
     }

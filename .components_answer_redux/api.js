@@ -1,7 +1,7 @@
 "use strict";
 
-const API_WORKS = true;         // turn this into false to see what happens
-const API_WAIT_TIME_MS = 1100;   // Wait time in milliseconds
+const API_WORKS = true; // turn this into false to see what happens
+const API_WAIT_TIME_MS = 1100; // Wait time in milliseconds
 
 /* This function is meant to take a very long time (>1 second).
  * It returns a promise,
@@ -25,4 +25,4 @@ function deleteOrder(order) {
 /* API functions to expose to other js files */
 export default {
     deleteOrder: deleteOrder
-}
+};

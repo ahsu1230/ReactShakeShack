@@ -46,7 +46,16 @@ I've given you starting code. Your current `index.html` should be linked to the 
 ```
 <script src="./components/main.js"></script>
 ```
-If at any time you would like to see how the application correctly behaves, replace `components` with `components_answer`.
+If at any time you would like to see how the application correctly behaves, replace `components` with `.components_answer`.
 
+## Recommended IDE
+
+When working in React, I recommend using VSCode (https://code.visualstudio.com/).
+It's an IDE that can be used for many different languages, but it has additional extensions that can help you with your React coding.
+
+Download and install VSCode. Once VSCode is installed, open it and search for the following Extensions to install:
+- "ES7 React" by `dsznajder`
+- "Prettier" - keeps your Javascript looking nice
+- "Beautify" - keeps your CSS/SASS looking nice
 
 To move on to the first task, click [here](./01_prerequisites.md).
