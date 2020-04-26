@@ -1,9 +1,8 @@
 "use strict";
 import "./homeOrderForm.sass";
 import React from "react";
-import ReactDOM from "react-dom";
 
-class HomeOrderForm extends React.Component {
+export class HomeOrderForm extends React.Component {
     render() {
         return (
             <section id="home-order-form">

@@ -78,4 +78,4 @@ Style the `<h1>` that you just created. Give it a font-size of 26px and the colo
 
 ---
 
-(Next Step)[./05_button_onclick.md]
+[Next Step](./05_react_lifecycles.md)

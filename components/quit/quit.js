@@ -1,7 +1,6 @@
 "use strict";
 import "./quit.sass";
 import React from "react";
-import ReactDOM from "react-dom";
 
 export default class QuitPage extends React.Component {
     render() {
