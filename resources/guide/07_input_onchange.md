@@ -111,6 +111,12 @@ Give this inputs and select the following styled propeties:
     & input
         ... <- Add your CSS properties here
 
+        &.num
+            ... <- Add a class if you need to. These properties will style an input with className "num"
+
+        &.name
+            ... <- These properties will style an input with className "name"
+
     & span
         ... <- Add your CSS properties here
 ```
