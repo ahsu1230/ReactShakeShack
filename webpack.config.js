@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./components_answer/main.js",
+    entry: "./components/main.js",
     output: {
         path: path.resolve(__dirname, "dist"),
         publicPath: "http://localhost:8080",
