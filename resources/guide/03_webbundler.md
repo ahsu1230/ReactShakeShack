@@ -33,7 +33,7 @@ Package.json is a file that describes what "packages", "libraries", and where ex
 
 - Under `scripts`, there are several options.
   - Two of which you just used `npm run build` and `npm run start`. Notice how both of these commands call webpack related things.
-  - You should notice another option called `prettify`. These are all custom options so you can define them however you'd like. With this option, if you want to make your code "prettier" and consistently indented, run `npm run prettify` which will call the `Prettier` library and reformat all code files in your current directory!
+  - You should notice another option called `prettify`. These are all custom options so you can define them however you'd like. With this option, if you want to make your code "prettier" and consistently indented, run `npm run prettify` which will call the `Prettier` library and reformat all Javascript code files in your current directory!
 - Under `dependencies` and `devDependencies`, you should see a list of external libraries that we use in order to get our whole project to work.
 
 - You should notice that `webpack`, `react`, and `sass` are all part of this dependency list.
