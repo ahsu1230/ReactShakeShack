@@ -131,6 +131,7 @@ Inside the input onChange handlers, update the state variables. The food dropdow
 
 - *Hint* Use `e.target.value` to retrieve the values selected/input by the user.
 - *Hint* Remember that the modify a `state` variable, you can ONLY use `this.setState{...}`.
+- *Hint* All text in input are String values, so when a user inputs a number into the "Number of Food" input field, it will actually be a String value not an integer. Use the `parseInt()` Javascript function to convert from a string to a number.
 
 ### Step 4: Retrieve State Variables
 
@@ -157,4 +158,4 @@ Every customer order should have its own ID. For example, the first order is ord
 
 ---
 
-[Continue](./09_react_lists.md)
+[Continue](./09_react_lists_and_props.md)
