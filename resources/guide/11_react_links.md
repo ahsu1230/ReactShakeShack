@@ -29,4 +29,6 @@ This `Router` component is telling us there are two valid URLs to this site. The
 
 So nothing to do here, but just observe this is where URL routes are defined in the front-end client.
 
+---
+
 [Continue](./12_react_img.md)
