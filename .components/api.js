@@ -1,7 +1,16 @@
 "use strict";
+import { getSavedOrders } from "./localStorage.js";
 
 const API_WORKS = true; // turn this into false to see what happens
 const API_WAIT_TIME_MS = 1100; // Wait time in milliseconds
+
+function fetchOrders() {
+    var promise = new Promise(function(resolve, reject) {
+        resolve(getSavedOrders());
+    });
+    return promise;
+}
+
 
 /* This function is meant to take a very long time (>1 second).
  * It returns a promise,
@@ -9,7 +18,7 @@ const API_WAIT_TIME_MS = 1100; // Wait time in milliseconds
  * Use resolve(...) to stop the promise and return a success case
  * Use reject(...) to stop the promise and return an error case
  */
-function deleteOrder(order) {
+function addOrder(order) {
     var promise = new Promise(function(resolve, reject) {
         setTimeout(function() {
             if (API_WORKS) {
@@ -24,5 +33,6 @@ function deleteOrder(order) {
 
 /* API functions to expose to other js files */
 export default {
-    deleteOrder: deleteOrder
+    fetchOrders: fetchOrders,
+    addOrder: addOrder
 };
