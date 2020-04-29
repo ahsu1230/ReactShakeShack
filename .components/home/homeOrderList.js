@@ -4,30 +4,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { HomeOrderListItem } from "./homeOrderListItem";
 
-const FAKE_ORDER_LIST = [
-    {
-        id: 4,
-        food: "burgers",
-        numFood: 5,
-        name: "Joe"
-    },
-    {
-        id: 5,
-        food: "burgers",
-        numFood: 5,
-        name: "Joe"
-    },
-    {
-        id: 6,
-        food: "burgers",
-        numFood: 5,
-        name: "Joe"
-    },
-];
-
 export class HomeOrderList extends React.Component {
     render() {
-        const orders = FAKE_ORDER_LIST;
+        const orders = this.props.list;
         const items = orders.map((order, index) => <li key={index}><HomeOrderListItem order={order}/></li>);
 
         let totalNumberOrders = 0;
@@ -41,8 +20,14 @@ export class HomeOrderList extends React.Component {
         }
 
         return (
-            <div>
+            <div id="home-order-list">
                 <h1>Order List</h1>
+                <div className="subheader">
+                    <span className="med">Order Id</span>
+                    <span className="lg">Name</span>
+                    <span className="med">Food</span>
+                    <span className="lg">Number of Food</span>
+                </div>
                 <ul>
                     {items}
                 </ul>

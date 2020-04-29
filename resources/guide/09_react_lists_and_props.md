@@ -244,11 +244,13 @@ For the home-order-list (in a `homeOrderList.sass` file), give your `<ul>` eleme
 
 For each of your home-order-list-items (in a `homeOrderListItem.sass` file), give it a:
 
-- height of 64px
-- line-height of 64px
-- bottom border of 1px solid gray (use _constants.sass)
 - `<span>` of each element inside this `home-order-list-item` should be `display: inline-block`
+- play with padding to give each `home-order-list-item` vertical breathing space and so you can easily vertically center the item.
+- bottom border of 1px solid gray (use _constants.sass)
 - Give different spans a certain width. For example, the number and id columns shouldn't be that big, so they can be more narrow than the name column.
+- Add a "table head" on top of the actual list to label what each of the columns mean (Order Id, Name, Number of Food, Food, etc.)
+
+![Diagram_Parent_Child_List](../images/screenshot_list_example2.png)
 
 ---
 

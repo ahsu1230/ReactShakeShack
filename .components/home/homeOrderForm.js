@@ -2,10 +2,11 @@
 import "./homeOrderForm.sass";
 import React from "react";
 
+const foodItems = ["burgers", "fries", "shakes"];
 export class HomeOrderForm extends React.Component {
     state = {
-        food: "",
-        num: 0,
+        food: foodItems[0],
+        num: 1,
         name: "",
         orderCounter: 0
     }
@@ -15,8 +16,15 @@ export class HomeOrderForm extends React.Component {
         console.log("Name: " + this.state.name);
         console.log("Food: " + this.state.food);
         console.log("NumFood: " + this.state.num);
+        const order = {
+            id: this.state.orderCounter,
+            name: this.state.name,
+            food: this.state.food,
+            numFood: this.state.num
+        };
+        this.props.addOrderCallback(order);
         this.setState({
-            orderCounter: this.state.orderCount + 1
+            orderCounter: this.state.orderCounter + 1
         });
     }
 
@@ -47,9 +55,9 @@ export class HomeOrderForm extends React.Component {
                 <h2>New Order Form</h2>
 
                 <select onChange={(e) => this.onChangeSelect(e)}>
-                    <option>Burgers</option>
-                    <option>Fries</option>
-                    <option>Shakes</option>
+                    <option value={foodItems[0]}>Burgers</option>
+                    <option value={foodItems[1]}>Fries</option>
+                    <option value={foodItems[2]}>Shakes</option>
                 </select>
 
                 <span>Number:</span>
