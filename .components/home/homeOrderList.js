@@ -7,16 +7,25 @@ import { HomeOrderListItem } from "./homeOrderListItem";
 export class HomeOrderList extends React.Component {
     render() {
         const orders = this.props.list;
-        const items = orders.map((order, index) => <li key={index}><HomeOrderListItem order={order}/></li>);
+        const items = orders.map((order, index) => {
+            return (
+                <li key={index}>
+                    <HomeOrderListItem
+                        order={order}
+                        deleteOrderCallback={this.props.deleteOrderCallback}
+                    />
+                </li>
+            );
+        });
 
         let totalNumberOrders = 0;
         orders.forEach(order => {
             totalNumberOrders += order.numFood;
         });
 
-        let quitLink = (<div></div>);
+        let quitLink = <div></div>;
         if (totalNumberOrders > 10) {
-            quitLink = (<Link to="/quit">Too many orders. I quit!</Link>);
+            quitLink = <Link to="/quit">Too many orders. I quit!</Link>;
         }
 
         return (
@@ -28,9 +37,7 @@ export class HomeOrderList extends React.Component {
                     <span className="med">Food</span>
                     <span className="lg">Number of Food</span>
                 </div>
-                <ul>
-                    {items}
-                </ul>
+                <ul>{items}</ul>
                 {quitLink}
             </div>
         );

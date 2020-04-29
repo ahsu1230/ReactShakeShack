@@ -10,7 +10,7 @@ export default class QuitPage extends React.Component {
         return (
             <div id="view-quit">
                 <h1>I Quit!</h1>
-                <img src={src}/>
+                <img src={src} />
                 <Link to="/">jk, me poor</Link>
             </div>
         );
