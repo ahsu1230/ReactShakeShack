@@ -22,9 +22,9 @@ function addOrder(order) {
     var promise = new Promise(function(resolve, reject) {
         setTimeout(function() {
             if (API_WORKS) {
-                resolve();
+                resolve("API successfully added");
             } else {
-                reject("API delete failed");
+                reject("API add failed");
             }
         }, API_WAIT_TIME_MS);
     });

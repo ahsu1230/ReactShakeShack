@@ -55,4 +55,4 @@ To view a website's localStorage information, go to Inspect > Application > Loca
 
 ---
 
-[Continue](./15b_component_didmount.md)
+[Continue](./16b_component_didmount.md)

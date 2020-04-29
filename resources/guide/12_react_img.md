@@ -41,4 +41,4 @@ When you get the image to appear, create a link under the image to link back to 
 
 ---
 
-[Continue](./13_react_function_parameters.md)
+[Continue](./13a_functions_as_variables.md)
