@@ -2,7 +2,6 @@
 
 It is a common pattern in Javascript to pass functions around to be executed "later". Let's say a complicated function has many tasks and when it's done you want it do something else. A common pattern is when you attempt to do many tasks and if it succeeds, you print a success message, but if the tasks fail, you print an error message.
 
-
 ```javascript
 function doComplicatedTasks() {
     let success = ...;

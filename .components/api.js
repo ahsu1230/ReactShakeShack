@@ -18,7 +18,7 @@ function fetchOrders() {
  * Use resolve(...) to stop the promise and return a success case
  * Use reject(...) to stop the promise and return an error case
  */
-function addOrder(order) {
+function addOrder() {
     var promise = new Promise(function(resolve, reject) {
         setTimeout(function() {
             if (API_WORKS) {
