@@ -9,7 +9,7 @@ export class HomeOrderForm extends React.Component {
         num: 1,
         name: "",
         orderCounter: 0
-    };
+    }
 
     onClickAddButton = () => {
         console.log("Add Order! " + this.state.orderCounter);

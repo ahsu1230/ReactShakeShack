@@ -49,7 +49,11 @@ window.localStorage.getItem("favorite_food");   // "fried chicken"
 
 And that's it! It's very simple. *NOTE* that this data is only available on a per-website basis. For instance, if this information is saved for `www.facebook.com`, this localStorage data is ONLY available when you're on `www.facebook.com`. In our case, the localStorage will be saving this data for the domain `http://localhost:8080`.
 
-Finally, if we ever want to start over or clear information, use `window.localStorage.clear()` to erase all key-value mappings (only for the current website domain, so localStorage for other websites will not be affected).
+Finally, if we ever want to start over or clear information, use this to erase all key-value mappings (only for the current website domain, so localStorage for other websites will not be affected).
+
+```javascript
+window.localStorage.clear();
+```
 
 To view a website's localStorage information, go to Inspect > Application > LocalStorage (very close to the Cookies section) in your browser.
 

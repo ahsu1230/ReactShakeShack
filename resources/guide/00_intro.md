@@ -58,4 +58,4 @@ Open a browser (like Chrome) and go to that url link (http://localhost:8080). Yo
 
 I've given you starting code. You should see an `index.html` and a `components` folder. All of your work should happen inside the contents of the `components` folder. Let's get started!
 
-To move on to the first task, click [here](./01_prerequisites.md).
+To move on to the guide, click [here](./01_prerequisites.md).

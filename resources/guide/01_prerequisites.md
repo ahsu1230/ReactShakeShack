@@ -41,4 +41,6 @@ In this guide, we will touch on the following concepts / tools which are common 
 - Modern Javascript (ES6)
 - SASS (CSS Pre-processor)
 
+**It is important to note that this guide is not 100% comprehensive.** I recommend Googling resources and additional examples of ReactJs / SASS in order to help you get through this guide.
+
 [Click here to continue](./02_application_overview.md)

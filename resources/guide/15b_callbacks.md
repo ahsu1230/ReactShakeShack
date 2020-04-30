@@ -60,7 +60,7 @@ When you do the above, it will actually evaluate `successCallback()` and you end
 
 Actually, we've already been using callback functions. When we've been passing functions (`addOrderToList` or `deleteOrderFromList` between parent-child components, we were essentially passing functions that would be executed later after an event happened. In this case, after the "Add Order" button was clicked, we invoked `addOrderToList()` and after the `Delete` button was clicked, we invoke `deleteOrderFromList`.
 
-## Callbacks and Asynchronous Calls
+## Callbacks and Promises
 
 Asynchronous and Callbacks basically go hand-in-hand. Remember that a callback function is invoked AFTER some tasks happen. In this case, we often call callback functions after an asynchronous task has finished. Take a look at the below example.
 
