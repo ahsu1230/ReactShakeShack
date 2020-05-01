@@ -1,50 +1,18 @@
 # Congratulations - You're Done!
 
-Congratulations on finishing this tutorial! From here, feel free to upload this project to your own Github repository.
+Congratulations on finishing this tutorial! From here, feel free to upload this project to your own Github repository. To do so, you can follow the directions [here](./20a_git_add_own_repo.md). Once you're done, feel free to PM me the URL of your repository!
 
-Here's how you can do that. You'll have to:
+In addition, you may take the time to dive into extra ReactJS / SASS tricks that will definitely improve your front-end development. Or, you may take the time to polish this application by solving this list of known bugs.
 
-- Remove your current origin
-- Setup a new origin pointing to your repository
-- Commit and push your work to that repository.
-
-Follow the steps in your Terminal / Command Prompt in the root folder of your local ReactShakeShack directory.
-
-1. Check your current remote
-
-```
-git remote -v
-```
-You should see two entries, both pointing to `https://github.com/ahsu1230/ReactForNoobs.git`
-
-2. Remove the current remote
-
-```
-git remote rm origin
-```
-
-3. On the Github website, create a new repository under your account. You may name the repository whatever you like (i.e. ReactShakeShackTutorial).
-
-Once the repository is created, you should be able to retrieve a url that looks like:
-`https://github.com/your_username/ReactShakeShackTutorial.git`
-**Copy this url!**
-
-4. Add this personal remote in your Terminal/Command. Of course, be sure to replace the username and project name appropriately.
-
-```
-git remote add origin your_username/ReactShakeShackTutorial
-```
-
-5. Check if things worked!
-
-```
-give remote -v
-```
-Should show you two entries, both pointing to your url.
-
-Once you're done, feel free to PM me the URL of your repository! And feel free to dive into the extras folder to learn a few more ReactJs tricks!
-
-I recommend doing the extra challenges in the following order:
+## Extras
 
 - [CSS Flexbox](./extras/css_flexbox.md) - An easier way to position elements with CSS
 - [CSS Modules](./extras/css_modules.md) - Removing CSS global scoping
+
+## Known Bugs
+
+The guide was only meant to teach you the fundamentals of ReactJS development. But there are still a few known bugs here and there.
+
+### Saving the OrderCounter
+
+As you add orders, the OrderCounter increases by value. But when you refresh the page, and try adding another order, the order starts back at 0, which could cause some problems because we now have orders with the same ID. To fix this, we need to also save the OrderCounter to local storage.

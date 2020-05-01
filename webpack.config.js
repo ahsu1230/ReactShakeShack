@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./components/main.js",
+    entry: "./.components/main.js",
     output: {
         path: path.resolve(__dirname, "dist"),
         publicPath: "http://localhost:8080",
@@ -23,7 +23,13 @@ module.exports = {
             },
             {
                 test: /\.(sass|css)$/,
-                loader: "css-loader!sass-loader"
+                loader: "style-loader!css-loader!sass-loader"
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                use: {
+                    loader: "url-loader"
+                }
             }
         ]
     }
