@@ -1,6 +1,6 @@
 # Congratulations - You're Done!
 
-Congratulations on finishing this tutorial! From here, feel free to upload this project to your own Github repository. To do so, you can follow the directions [here](./20a_git_add_own_repo.md). Once you're done, feel free to PM me the URL of your repository!
+Congratulations on finishing this tutorial! Make sure to push your changes to your own remote Github account. Once you're done, feel free to PM me the URL of your repository!
 
 In addition, you may take the time to dive into extra ReactJS / SASS tricks that will definitely improve your front-end development. Or, you may take the time to polish this application by solving this list of known bugs.
 
