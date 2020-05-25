@@ -11,7 +11,6 @@ function fetchOrders() {
     return promise;
 }
 
-
 /* This function is meant to take a very long time (>1 second).
  * It returns a promise,
  * which is a "I-don't-have-the-data-now-but-will-give-you-later" object.

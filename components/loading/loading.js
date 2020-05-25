@@ -11,7 +11,7 @@ export default class LoadingPopup extends React.Component {
                 <div className="overlay"></div>
                 <div className="popup-wrapper">
                     <h3>Loading...</h3>
-                    <img src={src}/>
+                    <img src={src} />
                 </div>
             </div>
         );
