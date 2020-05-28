@@ -15,7 +15,7 @@ Just like the button onClick handlers, inputs have an onChange handler. These on
 <input type="text" placeholder="Type here" onchange="onChangeText"/>
 ```
 
-Whenever a user changes the text in the input (insert/delete characters), the `onChangeText` Javascript function will be called.
+Whenever a user changes the text in the input (insert/delete characters), the `onChangeText` Javascript function will be called. *Clarification* In regular html, we use `onchange`. In ReactJs, we will use `onChange`.
 
 Here's the React way of using inputs:
 
@@ -62,7 +62,7 @@ Another input we will use is the dropdown. This one is actually with a `<select>
 </select>
 ```
 
-This is a dropdown menu with 3 options (Burgers, Fries, and Shakes). Every time the user changes their selection, the `this.OnChangeSelect` function will be called. You can also use the "event" object we used before (but this time named `e`) to figure out what the user ended up selecting.
+This is a dropdown menu with 3 options (Burgers, Fries, and Shakes). Every time the user changes their selection, the `this.onChangeSelect` function will be called. You can also use the "event" object we used before (but this time named `e`) to figure out what the user ended up selecting.
 In this case, `e.target.value` will either be "burgers", "fries", or "shakes" which are the `values` described in each of the `<option>` tags.
 
 ## ShakeShack Exercise - Create inputs and select with hooked up OnChange handlers
@@ -121,7 +121,7 @@ Give this inputs and select the following styled propeties:
         ... <- Add your CSS properties here
 ```
 
-Refer to this image for guidance... at this point, your form should resemble this.
+Refer to this image for guidance... at this point, your form should resemble this. *Bonus* points for adding a line below the form to separate it from the list which we'll soon soon implement.
 
 ![Cutout_Home_Form](../images/cutout_home_form.png)
 

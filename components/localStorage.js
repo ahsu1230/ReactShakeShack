@@ -5,11 +5,11 @@ export const getSavedOrders = () => {
     const orders = "[]"; // Replace this!
 
     return JSON.parse(orders);
-}
+};
 
-export const updateSavedOrders = (l) => {
+export const updateSavedOrders = l => {
     const list = JSON.stringify(l);
 
     // Implement this! Using the above variable `list`.
     // Saves data to localStorage. Be sure to use STORAGE_ORDER_LIST
-}
+};

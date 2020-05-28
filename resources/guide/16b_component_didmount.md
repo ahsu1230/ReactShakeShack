@@ -15,7 +15,7 @@ One of the lifecycles we mentioned but didn't explain in detail was `componentDi
 Inside `localStorage.js`, implement `getSavedOrders()` and `updateSaveOrders()`. Observe a constant is provided for you. You will use this as the key for `localStorage.setItem(...)` and `localStorage.getItem(...)`.
 
 ```javascript
-const STORAGE_ORDER_LIST = "storage_order_list";
+const STORAGE_ORDER_LIST = "storage_order_list"; // <- Use this constant!
 
 export const getSavedOrders = () => {
     // Retrieve data with localStorage. Be sure to use STORAGE_ORDER_LIST
@@ -39,7 +39,7 @@ Whenever the list of orders is updated in `home.js`, call the appropriate functi
 You will need an import statement.
 
 ```javascript
-import { updateSavedOrders } from "./localStorage.js";
+import { updateSavedOrders } from "../localStorage.js";
 ```
 
 And update the functions `addOrderToList` and `deleteOrderFromList`.
