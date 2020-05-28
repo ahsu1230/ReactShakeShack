@@ -15,7 +15,7 @@ For example, we could do something like this:
 <button onclick="handleOnClick">Click Here!</button>
 ```
 
-Somewhere in our javascript, we should've defined a function named `handleOnClick` which will be called whenever a user clicks on this button.
+Somewhere in our javascript, we should've defined a function named `handleOnClick` which will be called whenever a user clicks on this button. *Clarification* In regular html, we use `onclick`. In ReactJs, we will use `onClick`.
 
 ## The React Way
 
@@ -38,7 +38,7 @@ class MyComp extends React.Component {
 }
 ```
 
-As you can see, we have a `<button>` inside the Component's render(). When it is clicked, we invoke a function called `this.onClickButton`, which prints a message to console. 
+As you can see, we have a `<button>` inside the Component's render(). When it is clicked, we invoke a function called `this.onClickButton`, which prints a message to console.
 
 *As a side note:* `this.onClickButton` refers to the function `onClickButton` which is defined in "this" component.
 

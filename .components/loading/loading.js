@@ -3,7 +3,7 @@ import "./loading.sass";
 import React from "react";
 import src from "../../assets/spinner.svg";
 
-export default class LoadingPopup extends React.Component {
+export class LoadingPopup extends React.Component {
     render() {
         const show = this.props.show;
         return (
@@ -11,7 +11,7 @@ export default class LoadingPopup extends React.Component {
                 <div className="overlay"></div>
                 <div className="popup-wrapper">
                     <h3>Loading...</h3>
-                    <img src={src}/>
+                    <img src={src} />
                 </div>
             </div>
         );

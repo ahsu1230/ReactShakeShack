@@ -17,7 +17,7 @@ Each of these sections will be their own component. These components are "childr
 Go back to the `HomePage` component in `components/home/home.js`.
 In the same folder, you should also see `homeOrderForm.js` and `homeOrderList.js` Go to those files and you should see the basic components for both of them (`HomeOrderForm` and `HomeOrderList`). We are going to take these components and make them children to the `HomePage` component.
 
-Back in `home.js`, we'll have to first import `HomeOrderForm` and `HomeOrderList` using the following statements at the top of `home.js`. **Note** This is relative pathing. We are looking for these files which reside in the same folder.
+Back in `home.js`, we'll have to first import `HomeOrderForm` and `HomeOrderList` using the following statements at the top of `home.js`. **Note** This is *relative pathing*. We are looking for these files which reside in the same folder.
 
 ```javascript
 import { HomeOrderForm } from "./homeOrderForm.js";
@@ -33,7 +33,7 @@ export default class HomePage extends React.Component {
         return (
             <div id="view-home">
                 <h1>Shake Shack Order Manager</h1>
-                <HomeOrderForm/>
+                <HomeOrderForm/>        // <- Make sure to add it here too!
             </div>
         );
     }

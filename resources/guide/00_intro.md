@@ -25,28 +25,28 @@ It's an IDE that can be used for many different languages, but it has additional
 Download and install VSCode. Once VSCode is installed, open it and search for the following Extensions to install:
 
 - "ES7 React" by `dsznajder`
-- "Prettier" - keeps your Javascript looking nice
-- "Beautify" - keeps your CSS/SASS looking nice
+- "Prettier" by Esben Peterson - keeps your Javascript looking nice
+- "Beautify" by HookyQR - keeps your CSS/SASS looking nice
 
 ## Getting Started (installing Node and starting your web application)
 
 You will first need to install [nodeJS and npm](https://www.npmjs.com/get-npm).
 You can confirm things have successfully installed by running the following in Terminal/Command Prompt:
 
-```
+```unix
 node -v
 npm -v
 ```
 
-Using Terminal (Mac) or Command Prompt (Windows), traverse to the root directory (same directory as `index.html`) and run:
+You should see the latest version numbers for both node and npm. Using Terminal (Mac) or Command Prompt (Windows), traverse to the root directory (same directory as `index.html`) and run:
 
-```
+```unix
 npm install
 ```
 
 If there are no errors, let's run our web application! In the root directory, run:
 
-```
+```unix
 npm run build
 npm run start
 ```

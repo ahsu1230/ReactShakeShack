@@ -3,7 +3,7 @@ import "./home.sass";
 import React from "react";
 import { HomeOrderForm } from "./homeOrderForm.js";
 import { HomeOrderList } from "./homeOrderList.js";
-import LoadingPopup from "../loading/loading.js";
+import { LoadingPopup } from "../loading/loading.js";
 import API from "../api.js";
 import { updateSavedOrders } from "../localStorage.js";
 
@@ -14,16 +14,15 @@ export default class HomePage extends React.Component {
     };
 
     componentDidMount() {
-        API.fetchOrders()
-            .then(data => {
-                this.setState({
-                    orderList: data || []
-                });
+        API.fetchOrders().then(data => {
+            this.setState({
+                orderList: data || []
             });
+        });
     }
 
     apiAddOrderToList = order => {
-        this.setState({showLoading: true});
+        this.setState({ showLoading: true });
         API.addOrder()
             .then(() => {
                 this.addOrderToList(order);
@@ -32,9 +31,9 @@ export default class HomePage extends React.Component {
                 window.alert("Order failed to add :(");
             })
             .finally(() => {
-                this.setState({showLoading: false});
+                this.setState({ showLoading: false });
             });
-    }
+    };
 
     addOrderToList = order => {
         this.state.orderList.push(order);
@@ -55,7 +54,7 @@ export default class HomePage extends React.Component {
     render() {
         return (
             <div id="view-home">
-                <LoadingPopup show={this.state.showLoading}/>
+                <LoadingPopup show={this.state.showLoading} />
                 <h1>Shake Shake Burgers</h1>
                 <HomeOrderForm addOrderCallback={this.apiAddOrderToList} />
                 <HomeOrderList

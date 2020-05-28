@@ -67,7 +67,7 @@ To pass this function to another Component, you can simply pass in the function 
 ***NOTES:***
 
 - Remember that the function `addOrderToList` can only be called with `this` before it.
-- To access this function inside `HomeOrderForm`, it is available through `this.props.addOrderCallback`. Be sure ti invoke this function when the form button is clicked.
+- To access this function inside `HomeOrderForm`, it is available through `this.props.addOrderCallback`. Be sure to invoke this function when the form button is clicked.
 
 ### Are we on the same page?
 

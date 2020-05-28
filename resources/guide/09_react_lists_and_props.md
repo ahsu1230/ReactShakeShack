@@ -183,8 +183,8 @@ const FAKE_ORDER_LIST = [
 
 export class HomeOrderList extends React.Component {
     render() {
-        const links = FAKE_ORDER_LIST;
-        const items = links.map(...);   // <- implement this!
+        const orders = FAKE_ORDER_LIST;
+        const items = orders.map(...);   // <- implement this!
                                         // Only display the name of every order object.
         return (
             <div>
@@ -201,7 +201,7 @@ export class HomeOrderList extends React.Component {
 At this step, your list should look like this:
 ![Screenshot_List_Names](../images/screenshot_list_names.png)
 
-In another file, `homeOrderListItem.js`, create a new component called `HomeOrderListItem`. This component is the "child" component of the parent component `HomeOrderList`. This child component represents every order in our list. It will take in an order object from `this.props.order` and display the information correctly.
+Create another file, `homeOrderListItem.js`, and create a new component called `HomeOrderListItem`. This component is the "child" component of the parent component `HomeOrderList`. This child component represents every order in our list. It will take in an order object from `this.props.order` and display the information correctly.
 
 ```javascript
 export class HomeOrderListItem extends React.Component {
