@@ -5,7 +5,7 @@
     "main": "bundle.js",
     "scripts": {
         "clean": "rm -rf dist",
-        "build": "webpack --config webpack.config.js && cp index.html dist/index.html",
+        "build": "webpack --config webpack.config.js",
         "start": "webpack-dev-server --open --config webpack.config.js",
         "prettify": "prettier --config .prettierrc.yml --write \"**/*.js\""
     },
