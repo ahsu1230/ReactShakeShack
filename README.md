@@ -1,4 +1,4 @@
-# React with SnakeShack
+# React with ShakeShack
 
 A very basic guide to working with ReactJs and SASS.
 

@@ -1,16 +1,15 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./components/main.js",
-    output: {
-        path: path.resolve(__dirname, "dist"),
-        publicPath: "http://localhost:8080",
-        filename: "bundle.js"
-    },
     mode: "development",
+    entry: [path.resolve(__dirname, "components/main.js")],
+    output: {
+        publicPath: "/dist",
+        filename: "./bundle.js"
+    },
     devServer: {
-        writeToDisk: true,
-        contentBase: "./dist"
+        host: "localhost",
+        port: 8080
     },
     module: {
         rules: [
