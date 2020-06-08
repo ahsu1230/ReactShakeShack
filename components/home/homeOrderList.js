@@ -20,7 +20,7 @@ const FAKE_ORDER_LIST = [
     {
         id: 3,
         food: "shakes",
-        amount: 1,
+        amount: 3,
         name: "Bob"
     },
 ];
