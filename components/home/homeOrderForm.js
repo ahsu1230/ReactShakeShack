@@ -4,39 +4,47 @@ import React from "react";
 
 export class HomeOrderForm extends React.Component {
     state = {
-        food: "",
-        amount: 0,
-        name: "",
-        orderCounter: 1
+        orderCounter: 0,
+        name: "Unknown",
+        food: "Burgers",
+        amount: 0
     }
 
     onChangeSelect = e => {
-        console.log(e.target.value);
         this.setState({
             food: e.target.value
         });
+        console.log(e.target.value);
     }
 
     onChangeAmount = e => {
-        console.log(e.target.value);
         this.setState({
             amount: parseInt(e.target.value)
         });
+        console.log(e.target.value);
     }
 
     onChangeName = e => {
-        console.log(e.target.value);
         this.setState({
             name: e.target.value
         });
+        console.log(e.target.value);
     }
 
     onClickAddButton = () => {
+        const order = {
+            id: this.state.orderCounter,
+            name: this.state.name,
+            food: this.state.food,
+            amount: this.state.amount
+        };
+        this.props.addOrderCallback(order);
+
         console.log("Order added");
+        console.log("Order Counter: " + this.state.orderCounter);
         console.log("Name: " + this.state.name);
         console.log("Food: " + this.state.food);
         console.log("Amount: " + this.state.amount);
-        console.log("Order Counter: " + this.state.orderCounter);
 
         this.setState({
             orderCounter: this.state.orderCounter + 1
