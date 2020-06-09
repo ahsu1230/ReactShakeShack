@@ -1,21 +1,41 @@
 "use strict";
 import "./home.sass";
 import React from "react";
+import API from "./../api.js";
 import { HomeOrderForm } from "./homeOrderForm.js";
 import { HomeOrderList } from "./homeOrderList.js";
 import { updateSavedOrders } from "./../localStorage.js";
-import API from "./../api.js";
+import { LoadingPopup } from "./../loading/loading.js";
 
 export default class HomePage extends React.Component {
     state = {
-        orderList: []
+        orderList: [],
+        showLoading: false
+    }
+
+    apiAddOrderToList = order => {
+        this.setState({
+            showLoading: true
+        });
+        API.addOrder()
+            .then(() => {
+                this.addOrderToList(order);
+            })
+            .catch(() => {
+                console.log("Failed to add order");
+            })
+            .finally(() => {
+                this.setState({
+                    showLoading: false
+                });
+            });
     }
 
     addOrderToList = order => {
         this.state.orderList.push(order);
         this.setState({
             orderList: this.state.orderList
-        })
+        });
         updateSavedOrders(this.state.orderList);
     }
 
@@ -25,7 +45,7 @@ export default class HomePage extends React.Component {
                 this.state.orderList.splice(i, 1);
                 this.setState({
                     orderList: this.state.orderList
-                })
+                });
             }
         }
         updateSavedOrders(this.state.orderList);
@@ -35,7 +55,7 @@ export default class HomePage extends React.Component {
         API.fetchOrders().then(data => {
             this.setState({
                 orderList: data || []
-            })
+            });
         });
     }
 
@@ -43,8 +63,9 @@ export default class HomePage extends React.Component {
         return (
             <div id="view-home">
                 <h1>Shake Shack Order Manager</h1>
-                <HomeOrderForm addOrderCallback={this.addOrderToList}/>
+                <HomeOrderForm addOrderCallback={this.apiAddOrderToList}/>
                 <HomeOrderList list={this.state.orderList} deleteOrderCallback={this.deleteOrderFromList}/>
+                <LoadingPopup show={this.state.showLoading}/>
             </div>
         );
     }

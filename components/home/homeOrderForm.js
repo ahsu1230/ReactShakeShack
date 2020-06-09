@@ -37,7 +37,7 @@ export class HomeOrderForm extends React.Component {
             name: this.state.name,
             food: this.state.food,
             amount: this.state.amount
-        };
+        }
         this.props.addOrderCallback(order);
 
         console.log("Order added");

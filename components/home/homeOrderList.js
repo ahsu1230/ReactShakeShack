@@ -17,7 +17,7 @@ export class HomeOrderList extends React.Component {
         let totalOrders = 0;
         orders.forEach(order => {
             totalOrders = totalOrders + order.amount
-        })
+        });
 
         let quit = <span></span>
         if (totalOrders >= 10) {
