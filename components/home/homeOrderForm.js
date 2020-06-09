@@ -68,7 +68,7 @@ export class HomeOrderForm extends React.Component {
     componentDidMount() {
         API.fetchCount().then(data => {
             this.setState({
-                orderCounter: data || 0
+                orderCounter: data || -1
             });
         });
     }
@@ -86,7 +86,8 @@ export class HomeOrderForm extends React.Component {
 
                     <span>Amount: </span>
                     <input
-                        type="text"
+                        type="number"
+                        min="0"
                         placeholder="0"
                         onChange={e => this.onChangeAmount(e)}
                         className="amount"
