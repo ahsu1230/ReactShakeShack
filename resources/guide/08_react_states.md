@@ -22,7 +22,7 @@ As you can see, we create a constant variable called `headerText` and assign it 
 
 Let's say whenever we click on a button, we increment a `count` variable which we will then display. Variables in the `render()` function are usually "constants" meaning variables that should not change value. If we want to use a value that will change often, it's best to store it in something called the component `state`.
 
-A component state is just an object. Every field in this object must be initialized to something (in this case, zero). It can only be accessed by using `this.state.count` and can ***only*** be modified using `this.setState(...)`.
+A component state is just an object. Every field in this object must be initialized to something (in this case, zero). It can only be accessed by using `this.state.count` and can ***only*** be modified using `this.setState({...})`.
 
 ```javascript
 export class MyComponent extends React.Component {
@@ -130,7 +130,7 @@ You will need 3 onChange handlers (one for the food dropdown, one for name input
 Inside the input onChange handlers, update the state variables. The food dropdown should invoke the onChange handler that will update the state variable for food. The name input should invoke the onChange handler that will update the state variable for name. And so on.
 
 - *Hint* Use `e.target.value` to retrieve the values selected/input by the user.
-- *Hint* Remember that the modify a `state` variable, you can ONLY use `this.setState{...}`.
+- *Hint* Remember that the modify a `state` variable, you can ONLY use `this.setState({...})`.
 - *Hint* All text in input are String values, so when a user inputs a number into the "Number of Food" input field, it will actually be a String value not an integer. Use the `parseInt()` Javascript function to convert from a string to a number.
 
 ### Step 4: Retrieve State Variables
