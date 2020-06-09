@@ -51,7 +51,7 @@ In the `componentDidMount()` of `HomePage`, call `API.fetchOrders()` from the AP
 You will need an import statement.
 
 ```javascript
-import API from "./api.js";
+import API from "./../api.js";
 ```
 
 And to implement the `componentDidMount` lifecycle.

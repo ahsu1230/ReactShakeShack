@@ -56,7 +56,7 @@ addOrderToList = (order) => {
 ***NOTES:***
 
 - Remember that in order to modify a state variable, use `this.setState(...)`. Refer to a previous chapter for more details.
-- Use `___.push(...)` to append an element to a Javascript list (ONLINE_RESOURCE).
+- Use `___.push(...)` to append an element to a Javascript list (<https://www.w3schools.com/jsref/jsref_push.asp>).
 
 To pass this function to another Component, you can simply pass in the function name (but without the parantheses).
 

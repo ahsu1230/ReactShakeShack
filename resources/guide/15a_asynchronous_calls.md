@@ -48,7 +48,7 @@ let promise = new Promise(function(resolve, reject) {
 });
 ```
 
-This is how you define a `Promise` object. A Promise contains a `resolve` and a `reject` function, both of which must be called when your data processing is finished. If the data processing was a success, call `resolve`. Otherwise, if it's a failure, call `reject`. Should be simple enough.
+This is how you define a `Promise` object. A Promise contains a `resolve` and a `reject` function, both of which must be called when your data processing is finished. If the data processing was successful, `resolve` will be invoked. If the data processing failed, `reject` will be invoked.
 
 To use a `Promise`, there are 3 main functions: `then`, `catch`, `finally`. It has a similar structure to the Java `try-catch-finally` block. These 3 functions are used to "catch" the success/failure cases when the promise is finished executing. Using the `promise` variable from above...
 
