@@ -11,7 +11,7 @@ export default class HomePage extends React.Component {
     state = {
         orderList: [],
         showLoading: false
-    }
+    };
 
     apiAddOrderToList = order => {
         this.setState({
@@ -29,7 +29,7 @@ export default class HomePage extends React.Component {
                     showLoading: false
                 });
             });
-    }
+    };
 
     addOrderToList = order => {
         this.state.orderList.push(order);
@@ -37,7 +37,7 @@ export default class HomePage extends React.Component {
             orderList: this.state.orderList
         });
         updateSavedOrders(this.state.orderList);
-    }
+    };
 
     deleteOrderFromList = orderId => {
         for (let i = 0; i < this.state.orderList.length; i++) {
@@ -49,7 +49,7 @@ export default class HomePage extends React.Component {
             }
         }
         updateSavedOrders(this.state.orderList);
-    }
+    };
 
     componentDidMount() {
         API.fetchOrders().then(data => {
@@ -63,9 +63,12 @@ export default class HomePage extends React.Component {
         return (
             <div id="view-home">
                 <h1>Shake Shack Order Manager</h1>
-                <HomeOrderForm addOrderCallback={this.apiAddOrderToList}/>
-                <HomeOrderList list={this.state.orderList} deleteOrderCallback={this.deleteOrderFromList}/>
-                <LoadingPopup show={this.state.showLoading}/>
+                <HomeOrderForm addOrderCallback={this.apiAddOrderToList} />
+                <HomeOrderList
+                    list={this.state.orderList}
+                    deleteOrderCallback={this.deleteOrderFromList}
+                />
+                <LoadingPopup show={this.state.showLoading} />
             </div>
         );
     }

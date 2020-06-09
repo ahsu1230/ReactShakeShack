@@ -6,7 +6,7 @@ export class HomeOrderListItem extends React.Component {
     onClickDelete = id => {
         this.props.deleteOrderCallback(id);
         console.log("Deleted order: " + id);
-    }
+    };
 
     render() {
         var order = this.props.order;
@@ -16,7 +16,11 @@ export class HomeOrderListItem extends React.Component {
                 <span className="home-row-name">{order.name}</span>
                 <span className="home-row-food">{order.food}</span>
                 <span className="home-row-amount">{order.amount}</span>
-                <button id="delete" onClick={() => this.onClickDelete(order.id)}>Delete</button>
+                <button
+                    id="delete"
+                    onClick={() => this.onClickDelete(order.id)}>
+                    Delete
+                </button>
             </div>
         );
     }

@@ -11,7 +11,7 @@ export const getOrderCount = () => {
     const count = window.localStorage.getItem(STORAGE_ORDER_COUNT);
 
     return JSON.parse(count);
-}
+};
 
 export const updateSavedOrders = l => {
     const list = JSON.stringify(l);
@@ -21,4 +21,4 @@ export const updateSavedOrders = l => {
 export const updateOrderCount = c => {
     const count = JSON.stringify(c);
     window.localStorage.setItem(STORAGE_ORDER_COUNT, count);
-}
+};
