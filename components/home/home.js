@@ -3,6 +3,8 @@ import "./home.sass";
 import React from "react";
 import { HomeOrderForm } from "./homeOrderForm.js";
 import { HomeOrderList } from "./homeOrderList.js";
+import { updateSavedOrders } from "./../localStorage.js";
+import API from "./../api.js";
 
 export default class HomePage extends React.Component {
     state = {
@@ -14,6 +16,7 @@ export default class HomePage extends React.Component {
         this.setState({
             orderList: this.state.orderList
         })
+        updateSavedOrders(this.state.orderList);
     }
 
     deleteOrderFromList = orderId => {
@@ -25,6 +28,15 @@ export default class HomePage extends React.Component {
                 })
             }
         }
+        updateSavedOrders(this.state.orderList);
+    }
+
+    componentDidMount() {
+        API.fetchOrders().then(data => {
+            this.setState({
+                orderList: data || []
+            })
+        });
     }
 
     render() {
