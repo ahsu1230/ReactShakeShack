@@ -1,6 +1,8 @@
 "use strict";
 import "./homeOrderForm.sass";
 import React from "react";
+import API from "./../api.js";
+import { updateOrderCount } from "./../localStorage.js";
 
 export class HomeOrderForm extends React.Component {
     state = {
@@ -32,6 +34,13 @@ export class HomeOrderForm extends React.Component {
     }
 
     onClickAddButton = () => {
+        this.state.orderCounter = this.state.orderCounter + 1;
+        this.setState({
+            orderCounter: this.state.orderCounter
+        });
+
+        console.log(this.state.orderCounter);
+        console.log(this.props.count);
         const order = {
             id: this.state.orderCounter,
             name: this.state.name,
@@ -39,15 +48,20 @@ export class HomeOrderForm extends React.Component {
             amount: this.state.amount
         }
         this.props.addOrderCallback(order);
+        updateOrderCount(this.state.orderCounter);
 
         console.log("Order added");
         console.log("Order Counter: " + this.state.orderCounter);
         console.log("Name: " + this.state.name);
         console.log("Food: " + this.state.food);
         console.log("Amount: " + this.state.amount);
+    }
 
-        this.setState({
-            orderCounter: this.state.orderCounter + 1
+    componentDidMount() {
+        API.fetchCount().then(data => {
+            this.setState({
+                orderCounter: data || 0
+            });
         });
     }
 

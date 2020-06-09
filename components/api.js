@@ -1,5 +1,5 @@
 "use strict";
-import { getSavedOrders } from "./localStorage.js";
+import { getSavedOrders, getOrderCount } from "./localStorage.js";
 
 const API_WORKS = true; // turn this into false to see what happens
 const API_WAIT_TIME_MS = 1100; // Wait time in milliseconds
@@ -7,6 +7,13 @@ const API_WAIT_TIME_MS = 1100; // Wait time in milliseconds
 function fetchOrders() {
     var promise = new Promise(function(resolve, reject) {
         resolve(getSavedOrders());
+    });
+    return promise;
+}
+
+function fetchCount() {
+    var promise = new Promise(function(resolve, reject) {
+        resolve(getOrderCount());
     });
     return promise;
 }
@@ -33,5 +40,6 @@ function addOrder(order) {
 /* API functions to expose to other js files */
 export default {
     fetchOrders: fetchOrders,
+    fetchCount: fetchCount,
     addOrder: addOrder
 };

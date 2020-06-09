@@ -28,7 +28,7 @@ export class HomeOrderList extends React.Component {
             <section id="home-order-list">
                 <h1>Order List</h1>
                 <div>
-                    <span className="home-row-id">Order Id</span>
+                    <span className="home-row-id">Id</span>
                     <span className="home-row-name">Name</span>
                     <span className="home-row-food">Food</span>
                     <span className="home-row-amount">Amount</span>
